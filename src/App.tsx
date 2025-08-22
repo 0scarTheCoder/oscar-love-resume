@@ -69,7 +69,7 @@ function App() {
             </p>
             <p className="text-xl text-gray-300 leading-relaxed">
               Recently graduated with a Bachelor of Philosophy (Honours) in Computer Science and Software 
-              Engineering from UWA (July 2025), majoring in Data Science, Mathematics and Statistics. 
+              Engineering from UWA (July 2025), majoring in Data Science, and Mathematics and Statistics. 
               I'm passionate about using technology to solve real-world problems and always strive to 
               improve and develop professionally.
             </p>
@@ -292,7 +292,7 @@ function App() {
             <h3 className="text-2xl font-bold text-white mb-2">Bachelor of Philosophy (Honours)</h3>
             <p className="neon-text text-lg mb-4">University of Western Australia • July 2025</p>
             <p className="text-gray-300 text-lg mb-4">
-              Computer Science and Software Engineering, majoring in Data Science, Mathematics and Statistics
+              Computer Science and Software Engineering Honours, majoring in Data Science, and Mathematics and Statistics
             </p>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-6">
               <div className="text-center">
