@@ -65,44 +65,131 @@ const LiveChat: React.FC = () => {
     return () => clearInterval(statusInterval);
   }, []);
 
-  // Auto-responses and typing simulation
+  // Enhanced AI-style chatbot with conversation context
+  const [conversationContext, setConversationContext] = useState<string[]>([]);
+  
   const triggerAutoResponse = (userMessage: string) => {
-    const responses = [
-      "Thanks for reaching out! I'll get back to you soon.",
-      "Hi there! I'm currently working on some exciting projects. Let me know what you'd like to discuss!",
-      "Great to hear from you! I'm passionate about creating amazing web experiences.",
-      "Hello! I'd love to chat about potential opportunities or projects.",
-      "Thanks for the message! I'm always excited to connect with fellow developers and potential collaborators."
-    ];
-
-    const keywords = {
-      'hello|hi|hey': "Hello! Thanks for visiting my portfolio. How can I help you today?",
-      'hire|job|work|opportunity': "I'm definitely interested in new opportunities! Please tell me more about what you have in mind.",
-      'project|collaboration|collaborate': "I'd love to hear about your project! What kind of application or website are you looking to build?",
-      'skills|experience|technology': "I specialize in React, TypeScript, Node.js, and full-stack development. What specific technologies are you interested in?",
-      'contact|email|phone': "You can reach me at oscar.love@example.com or use this chat for immediate responses!",
-      'portfolio|website|resume': "Thanks for checking out my work! Is there a particular project you'd like to know more about?"
+    const lowerMessage = userMessage.toLowerCase();
+    
+    // Add message to conversation context
+    setConversationContext(prev => [...prev, lowerMessage].slice(-5)); // Keep last 5 messages
+    
+    // Advanced keyword matching with context awareness
+    const responses = {
+      // Greetings & Initial Contact
+      'hello|hi|hey|good morning|good afternoon': [
+        "Hello! 👋 Welcome to my interactive portfolio. I'm Oscar's AI assistant.",
+        "Hi there! 🤖 I'm an AI chatbot showcasing Oscar's development skills. How can I help?",
+        "Hey! 👨‍💻 Thanks for visiting Oscar's portfolio. What brings you here today?",
+        "Greetings! 🚀 I'm Oscar's AI assistant. Ready to discuss projects, skills, or opportunities?"
+      ],
+      
+      // Hiring & Job Opportunities
+      'hire|job|work|opportunity|position|role|career': [
+        "🎯 Exciting! Oscar is actively seeking new opportunities. He specializes in React, TypeScript, and full-stack development.",
+        "💼 Oscar would love to discuss potential roles! He's experienced in modern web development and always eager for new challenges.",
+        "🚀 Great timing! Oscar is available for both contract work and full-time positions. What type of role are you considering?",
+        "⭐ Perfect! Oscar's looking for opportunities to build amazing web applications. Tell me more about your company and the role!"
+      ],
+      
+      // Technical Skills & Experience
+      'skills|experience|technology|tech|react|typescript|javascript|node|backend|frontend': [
+        "🛠️ Oscar's tech stack includes React, TypeScript, Node.js, Python, and modern deployment platforms like Vercel and AWS.",
+        "💻 He's proficient in full-stack development: React/Next.js frontend, Node.js/Express backend, PostgreSQL/MongoDB databases.",
+        "🔧 Oscar loves working with: React ecosystem, TypeScript, Tailwind CSS, real-time features (Socket.io), and cloud deployment.",
+        "⚡ His expertise spans modern web development, API integration, database design, and creating interactive user experiences like this chat!"
+      ],
+      
+      // Projects & Portfolio
+      'project|portfolio|website|work|examples|github': [
+        "📁 You're experiencing one of Oscar's projects right now! This live chat and GitHub activity feed demonstrate his real-time development skills.",
+        "🎨 Oscar's portfolio showcases full-stack capabilities: this interactive resume, real-time features, and responsive design.",
+        "🔗 Check out his GitHub activity feed on this page - it shows live coding activity and project contributions.",
+        "💡 This very website demonstrates React, TypeScript, real-time APIs, and advanced UI/UX design!"
+      ],
+      
+      // Collaboration & Communication
+      'collaborate|team|communication|remote|timezone': [
+        "🌍 Oscar works effectively across timezones! Check out the live timezone display on this page showing his availability.",
+        "🤝 He's excellent at remote collaboration and has experience working with international teams.",
+        "📞 Oscar values clear communication and uses modern tools for project management and team coordination.",
+        "⏰ The timezone widget shows when he's typically available - he's flexible with meeting times for important discussions!"
+      ],
+      
+      // Contact & Next Steps
+      'contact|email|phone|reach|connect|meeting': [
+        "📧 You can reach Oscar directly at oscar.love@example.com for serious inquiries.",
+        "🗓️ Ready to schedule a call? Oscar's availability is shown in the timezone widget on this page.",
+        "💬 For quick questions, feel free to continue chatting here - I'll make sure Oscar sees your messages!",
+        "🔔 Leave your contact info and Oscar will get back to you personally within 24 hours."
+      ],
+      
+      // Chatbot & AI Questions
+      'chatbot|ai|bot|artificial|intelligence|how|what': [
+        "🤖 I'm an AI assistant built to showcase Oscar's development skills! This chat demonstrates real-time messaging capabilities.",
+        "💡 This chatbot is part of Oscar's portfolio - showing how he integrates AI-like features into web applications.",
+        "🧠 I use keyword recognition and context awareness to provide relevant responses about Oscar's work and availability.",
+        "⚡ Pretty cool, right? This kind of interactive feature is what Oscar builds for clients who want engaging user experiences!"
+      ],
+      
+      // Pricing & Business
+      'price|cost|rate|budget|proposal': [
+        "💰 Oscar's rates are competitive and depend on project scope. He offers both hourly and project-based pricing.",
+        "📊 For custom quotes, please share your project requirements and timeline - Oscar provides detailed proposals.",
+        "💼 He works with startups to enterprise clients, with flexible engagement models to fit your budget.",
+        "🎯 Every project gets a personalized proposal. The investment varies based on complexity and features needed."
+      ]
     };
 
-    let response = responses[Math.floor(Math.random() * responses.length)];
-    
-    // Check for specific keywords
-    const lowerMessage = userMessage.toLowerCase();
-    for (const [pattern, specificResponse] of Object.entries(keywords)) {
+    let response = "Thanks for your message! I'm Oscar's AI assistant. Could you tell me more about what you're looking for?";
+    let isContextual = false;
+
+    // Enhanced keyword matching with priority
+    for (const [pattern, responseList] of Object.entries(responses)) {
       if (new RegExp(pattern).test(lowerMessage)) {
-        response = specificResponse;
+        response = responseList[Math.floor(Math.random() * responseList.length)];
+        isContextual = true;
         break;
       }
     }
 
-    // Simulate typing delay
+    // Context-aware follow-up questions
+    if (isContextual) {
+      const followUps = [
+        " What would you like to know more about?",
+        " Is there anything specific you'd like to discuss?",
+        " Feel free to ask me anything else!",
+        " What's your next question?",
+        " How can I help you further?"
+      ];
+      
+      if (Math.random() > 0.3) { // 70% chance of follow-up
+        response += followUps[Math.floor(Math.random() * followUps.length)];
+      }
+    }
+
+    // Add personality based on conversation length
+    if (conversationContext.length > 2) {
+      const personalityTouches = [
+        " 😊",
+        " 🚀",
+        " 💪",
+        " ⭐",
+        ""
+      ];
+      response += personalityTouches[Math.floor(Math.random() * personalityTouches.length)];
+    }
+
+    // Simulate realistic typing delay based on message length
+    const typingDelay = Math.min(3000, 800 + (response.length * 30)); // 30ms per character, max 3s
+    
     setIsTyping(true);
     setTimeout(() => {
       setIsTyping(false);
       const autoMessage: Message = {
         id: Date.now().toString(),
         text: response,
-        sender: oscarStatus.isOnline ? 'oscar' : 'bot',
+        sender: 'bot', // Always show as bot for AI responses
         timestamp: new Date(),
         status: 'delivered'
       };
@@ -111,7 +198,7 @@ const LiveChat: React.FC = () => {
       if (!isOpen) {
         setUnreadCount(prev => prev + 1);
       }
-    }, 1000 + Math.random() * 2000); // 1-3 second delay
+    }, typingDelay);
   };
 
   const handleSendMessage = () => {
@@ -145,15 +232,41 @@ const LiveChat: React.FC = () => {
       setShowUserForm(false);
       setIsConnected(true);
       
-      // Welcome message
-      const welcomeMessage: Message = {
-        id: 'welcome',
-        text: `Hi ${userInfo.name}! Welcome to my portfolio. I'm ${oscarStatus.isOnline ? 'currently online' : 'away right now but'} I'll respond as soon as possible. What brings you here today?`,
-        sender: oscarStatus.isOnline ? 'oscar' : 'bot',
-        timestamp: new Date(),
-        status: 'delivered'
-      };
-      setMessages([welcomeMessage]);
+      // Welcome messages from AI bot
+      const welcomeMessages: Message[] = [
+        {
+          id: 'welcome-1',
+          text: `Hi ${userInfo.name}! 👋 Welcome to Oscar's interactive portfolio.`,
+          sender: 'bot',
+          timestamp: new Date(),
+          status: 'delivered'
+        },
+        {
+          id: 'welcome-2', 
+          text: `I'm Oscar's AI assistant, built to showcase his development skills. This chat demonstrates real-time messaging capabilities! 🤖`,
+          sender: 'bot',
+          timestamp: new Date(Date.now() + 1000),
+          status: 'delivered'
+        },
+        {
+          id: 'welcome-3',
+          text: `Feel free to ask about Oscar's experience, projects, availability, or anything else. I'm here to help! 🚀`,
+          sender: 'bot',
+          timestamp: new Date(Date.now() + 2000),
+          status: 'delivered'
+        }
+      ];
+      
+      // Send messages with realistic delays
+      setMessages([welcomeMessages[0]]);
+      
+      setTimeout(() => {
+        setMessages(prev => [...prev, welcomeMessages[1]]);
+      }, 1500);
+      
+      setTimeout(() => {
+        setMessages(prev => [...prev, welcomeMessages[2]]);
+      }, 3000);
     }
   };
 
