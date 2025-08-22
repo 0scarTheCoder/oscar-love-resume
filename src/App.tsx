@@ -10,6 +10,7 @@ import Projects from './components/Projects';
 import Contact from './components/Contact';
 import GitHubActivity from './components/GitHubActivity';
 import LiveChat from './components/LiveChat';
+import TimeZoneDisplay from './components/TimeZoneDisplay';
 import './App.css';
 
 function App() {
@@ -43,8 +44,9 @@ function App() {
                 </p>
               </div>
               
-              <div className="grid grid-cols-1 lg:grid-cols-1 gap-8">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
                 <GitHubActivity />
+                <TimeZoneDisplay />
               </div>
             </div>
           </section>
