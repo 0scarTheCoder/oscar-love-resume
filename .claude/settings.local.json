@@ -6,7 +6,14 @@
       "Bash(git commit:*)",
       "Bash(npm run build:*)",
       "WebFetch(domain:oscar-love-resume-pj7tfvaik-oscars-projects-93d639f0.vercel.app)",
-      "WebFetch(domain:9000-firebase-studio-1755841390916.cluster-73qgvk7hjjadkrjeyexca5ivva.cloudworkstations.dev)"
+      "WebFetch(domain:9000-firebase-studio-1755841390916.cluster-73qgvk7hjjadkrjeyexca5ivva.cloudworkstations.dev)",
+      "Bash(git branch:*)",
+      "Bash(gh repo create:*)",
+      "Bash(mkdir:*)",
+      "Bash(npx create-next-app:*)",
+      "WebSearch",
+      "Bash(npm run dev:*)",
+      "Bash(rm:*)"
     ],
     "deny": [],
     "ask": []
