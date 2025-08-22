@@ -4,7 +4,9 @@
       "Bash(git add:*)",
       "Bash(git push:*)",
       "Bash(git commit:*)",
-      "Bash(npm run build:*)"
+      "Bash(npm run build:*)",
+      "WebFetch(domain:oscar-love-resume-pj7tfvaik-oscars-projects-93d639f0.vercel.app)",
+      "WebFetch(domain:9000-firebase-studio-1755841390916.cluster-73qgvk7hjjadkrjeyexca5ivva.cloudworkstations.dev)"
     ],
     "deny": [],
     "ask": []
