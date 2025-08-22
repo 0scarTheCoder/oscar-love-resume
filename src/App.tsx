@@ -11,7 +11,7 @@ import Contact from './components/Contact';
 import GitHubActivity from './components/GitHubActivity';
 import LiveChat from './components/LiveChat';
 import TimeZoneDisplay from './components/TimeZoneDisplay';
-import SimpleChatButton from './components/SimpleChatButton';
+import EmbeddedChat from './components/EmbeddedChat';
 import './App.css';
 
 function App() {
@@ -48,24 +48,19 @@ function App() {
               <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8">
                 <GitHubActivity />
                 <TimeZoneDisplay />
-                <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6 border border-gray-200 dark:border-gray-700">
-                  <div className="flex items-center justify-between mb-6">
+                <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg border border-gray-200 dark:border-gray-700 flex flex-col h-96">
+                  <div className="flex items-center justify-between p-4 border-b border-gray-200 dark:border-gray-700">
                     <h3 className="text-xl font-bold text-gray-900 dark:text-white flex items-center gap-2">
                       <span className="text-2xl">💬</span>
-                      AI Chat Demo
+                      Interactive AI Chat
                     </h3>
                     <div className="flex items-center gap-2">
-                      <div className="w-2 h-2 bg-blue-500 rounded-full animate-pulse"></div>
-                      <span className="text-sm text-gray-500 dark:text-gray-400">Interactive</span>
+                      <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+                      <span className="text-sm text-gray-500 dark:text-gray-400">Live</span>
                     </div>
                   </div>
-                  <div className="text-center">
-                    <p className="text-gray-600 dark:text-gray-300 mb-6">
-                      Experience a smart chatbot built with React and TypeScript. Click below to see AI-powered responses!
-                    </p>
-                    <div className="relative inline-block">
-                      <SimpleChatButton />
-                    </div>
+                  <div className="flex-1">
+                    <EmbeddedChat />
                   </div>
                 </div>
               </div>
