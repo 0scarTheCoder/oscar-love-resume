@@ -19,7 +19,11 @@
       "Bash(gh repo view:*)",
       "Bash(vercel:*)",
       "Bash(lsof:*)",
-      "Bash(mv:*)"
+      "Bash(mv:*)",
+      "Bash(grep:*)",
+      "Bash(cp:*)",
+      "Bash(npx tsc:*)",
+      "Bash(npx vercel:*)"
     ],
     "deny": [],
     "ask": []

@@ -106,8 +106,8 @@ function App() {
                 <h3 className="text-2xl font-bold mb-6 text-white">💻 Programming Languages</h3>
                 <div className="grid grid-cols-2 gap-4">
                   {['Python', 'R', 'JavaScript', 'Java', 'TypeScript', 'HTML/CSS'].map((skill, index) => (
-                    <div key={skill} className="bg-gray-900/50 backdrop-blur-sm px-6 py-4 rounded-xl text-center border border-gray-700 hover:border-[#30C55A] hover:shadow-[0_0_20px_rgba(48,197,90,0.3)] transition-all duration-300 transform hover:scale-105">
-                      <span className="font-bold text-white">{skill}</span>
+                    <div key={skill} className="bg-gray-900/50 backdrop-blur-sm px-4 py-3 rounded-xl text-center border border-gray-700 hover:border-[#30C55A] hover:shadow-[0_0_20px_rgba(48,197,90,0.3)] transition-all duration-300 transform hover:scale-105">
+                      <span className="font-bold text-white text-sm">{skill}</span>
                     </div>
                   ))}
                 </div>
@@ -118,8 +118,8 @@ function App() {
                 <h3 className="text-2xl font-bold mb-6 text-white">📈 Data Science & Analytics</h3>
                 <div className="grid grid-cols-2 gap-4">
                   {['Statistical Analysis', 'Machine Learning', 'Data Visualization', 'Computational Statistics', 'Time Series Analysis', 'Bayesian Statistics'].map((skill, index) => (
-                    <div key={skill} className="bg-gray-900/50 backdrop-blur-sm px-6 py-4 rounded-xl text-center border border-gray-700 hover:border-[#30C55A] hover:shadow-[0_0_20px_rgba(48,197,90,0.3)] transition-all duration-300 transform hover:scale-105">
-                      <span className="font-bold text-white">{skill}</span>
+                    <div key={skill} className="bg-gray-900/50 backdrop-blur-sm px-4 py-3 rounded-xl text-center border border-gray-700 hover:border-[#30C55A] hover:shadow-[0_0_20px_rgba(48,197,90,0.3)] transition-all duration-300 transform hover:scale-105">
+                      <span className="font-bold text-white text-sm">{skill}</span>
                     </div>
                   ))}
                 </div>
@@ -130,8 +130,8 @@ function App() {
                 <h3 className="text-2xl font-bold mb-6 text-white">🛠️ Tools & Technologies</h3>
                 <div className="grid grid-cols-2 gap-4">
                   {['SQL', 'Git/GitHub', 'Jupyter', 'RStudio', 'Power BI', 'Excel', 'React', 'Node.js'].map((skill, index) => (
-                    <div key={skill} className="bg-gray-900/50 backdrop-blur-sm px-6 py-4 rounded-xl text-center border border-gray-700 hover:border-[#30C55A] hover:shadow-[0_0_20px_rgba(48,197,90,0.3)] transition-all duration-300 transform hover:scale-105">
-                      <span className="font-bold text-white">{skill}</span>
+                    <div key={skill} className="bg-gray-900/50 backdrop-blur-sm px-4 py-3 rounded-xl text-center border border-gray-700 hover:border-[#30C55A] hover:shadow-[0_0_20px_rgba(48,197,90,0.3)] transition-all duration-300 transform hover:scale-105">
+                      <span className="font-bold text-white text-sm">{skill}</span>
                     </div>
                   ))}
                 </div>
@@ -142,8 +142,8 @@ function App() {
                 <h3 className="text-2xl font-bold mb-6 text-white">👥 Leadership & Soft Skills</h3>
                 <div className="grid grid-cols-2 gap-4">
                   {['Leadership', 'Teamwork', 'Communication', 'Problem Solving', 'Adaptability', 'Work Ethic'].map((skill, index) => (
-                    <div key={skill} className="bg-gray-900/50 backdrop-blur-sm px-6 py-4 rounded-xl text-center border border-gray-700 hover:border-[#30C55A] hover:shadow-[0_0_20px_rgba(48,197,90,0.3)] transition-all duration-300 transform hover:scale-105">
-                      <span className="font-bold text-white">{skill}</span>
+                    <div key={skill} className="bg-gray-900/50 backdrop-blur-sm px-4 py-3 rounded-xl text-center border border-gray-700 hover:border-[#30C55A] hover:shadow-[0_0_20px_rgba(48,197,90,0.3)] transition-all duration-300 transform hover:scale-105">
+                      <span className="font-bold text-white text-sm">{skill}</span>
                     </div>
                   ))}
                 </div>
@@ -171,12 +171,11 @@ function App() {
                 </div>
               </div>
             </section>
-
           </div>
 
           {/* RIGHT COLUMN */}
           <div className="space-y-16">
-
+            
             {/* Experience */}
             <section>
               <h2 className="text-4xl font-bold mb-8 neon-text">EXPERIENCE</h2>
@@ -214,18 +213,30 @@ function App() {
                     <li>⚡ Specializing in mathematics, physics, and data science</li>
                   </ul>
                 </div>
+                <div className="relative pl-8 border-l-4 border-[#30C55A] glow-border">
+                  <div className="absolute -left-2 top-0 w-4 h-4 bg-[#30C55A] rounded-full animate-pulse"></div>
+                  <h3 className="text-2xl font-bold text-white">Volleyball Referee</h3>
+                  <p className="neon-text text-lg mb-4">VWA • March 2021 - Current</p>
+                  <ul className="text-gray-300 space-y-2 text-lg">
+                    <li>⚡ Officiate volleyball matches at various competition levels</li>
+                    <li>⚡ Make quick, accurate decisions under pressure</li>
+                    <li>⚡ Maintain game flow and ensure fair play</li>
+                    <li>⚡ Level 2 certified referee</li>
+                  </ul>
+                </div>
               </div>
             </section>
 
             {/* Achievements */}
             <section>
               <h2 className="text-4xl font-bold mb-8 neon-text">ACHIEVEMENTS</h2>
-              <div className="grid grid-cols-1 gap-6">
+              <div className="space-y-6">
                 {[
                   { icon: "🏆", title: "1st Place SLB Data Science Hackathon", desc: "Won first place among WA university students in October 2023" },
                   { icon: "🥈", title: "2nd Place UWA WHACK WesCEF Hackathon", desc: "Secured second place in September 2023" },
                   { icon: "🎯", title: "ATAR 99.35", desc: "Achieved top 1% of students in Western Australia" },
                   { icon: "🏐", title: "Australian Volleyball Representative", desc: "Selected for Australian teams U17s, U18s & U19s (2017-2019)" },
+                  { icon: "👨‍🎓", title: "Bachelor of Philosophy (Honours)", desc: "Computer Science & Software Engineering from UWA, majoring in Data Science" },
                   { icon: "🥇", title: "Unisport Nationals Volleyball Champion", desc: "Team member of championship-winning university team (2022)" }
                 ].map((achievement, index) => (
                   <div key={index} className="bg-gray-900/50 backdrop-blur-sm p-6 rounded-xl border border-gray-700 hover:border-[#30C55A] hover:shadow-[0_0_20px_rgba(48,197,90,0.3)] transform hover:scale-[1.02] transition-all duration-300">
@@ -242,8 +253,8 @@ function App() {
             {/* Live Features */}
             <section>
               <h2 className="text-4xl font-bold mb-8 neon-text">LIVE FEATURES</h2>
-              <p className="text-gray-300 mb-8">
-                Real-time data feeds and interactive components showcasing technical capabilities
+              <p className="text-lg text-gray-300 mb-8">
+                Real-time data feeds and interactive components showcasing advanced technical capabilities
               </p>
               <div className="space-y-6">
                 <div className="transform hover:scale-[1.02] transition-all duration-300">
@@ -272,13 +283,23 @@ function App() {
                 </div>
               </div>
             </section>
-
           </div>
-
         </div>
 
+        {/* Hobbies - Full Width Below Columns */}
+        <section className="mt-20 mb-20">
+          <h2 className="text-4xl font-bold mb-8 neon-text text-center">INTERESTS & HOBBIES</h2>
+          <div className="flex flex-wrap justify-center gap-4">
+            {['🎮 Gaming', '📚 Tech Innovation', '🏃‍♂️ Running', '🎵 Music Production', '📷 Photography', '🌱 Open Source'].map((hobby, index) => (
+              <span key={hobby} className="bg-gray-900/50 backdrop-blur-sm px-6 py-3 rounded-xl border border-gray-700 hover:border-[#30C55A] transition-all duration-300 transform hover:scale-105 text-lg font-medium">
+                {hobby}
+              </span>
+            ))}
+          </div>
+        </section>
+
         {/* Footer */}
-        <footer className="text-center text-gray-400 border-t border-gray-800 pt-12 mt-20 text-lg">
+        <footer className="text-center text-gray-400 border-t border-gray-800 pt-12 text-lg">
           <p className="neon-text">© 2024 OSCAR LOVE • Built with React & TypeScript • Always Evolving 🚀</p>
         </footer>
       </div>
