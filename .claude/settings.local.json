@@ -18,7 +18,8 @@
       "Bash(npm start)",
       "Bash(gh repo view:*)",
       "Bash(vercel:*)",
-      "Bash(lsof:*)"
+      "Bash(lsof:*)",
+      "Bash(mv:*)"
     ],
     "deny": [],
     "ask": []
