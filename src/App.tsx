@@ -83,7 +83,7 @@ function App() {
               { label: 'Hackathon Wins', value: '2' },
               { label: 'Years Experience', value: '6+' }
             ].map((stat, index) => (
-              <div key={stat.label} className="text-center p-6 bg-gray-900/50 backdrop-blur-sm rounded-xl border border-gray-700 hover:border-[#30C55A] transition-all duration-300">
+              <div key={stat.label} className="text-center p-6 bg-gray-900/50 backdrop-blur-sm rounded-xl border border-gray-700 hover:border-[#30C55A] hover:shadow-[0_0_20px_rgba(48,197,90,0.3)] transition-all duration-300 transform hover:scale-105">
                 <div className="text-3xl font-bold neon-text mb-2">{stat.value}</div>
                 <div className="text-sm text-gray-400">{stat.label}</div>
               </div>
@@ -188,7 +188,7 @@ function App() {
               { icon: "👨‍🎓", title: "Bachelor of Philosophy (Honours)", desc: "Computer Science & Software Engineering from UWA, majoring in Data Science" },
               { icon: "🥇", title: "Unisport Nationals Volleyball Champion", desc: "Team member of championship-winning university team (2022)" }
             ].map((achievement, index) => (
-              <div key={index} className="bg-gray-900/50 backdrop-blur-sm p-8 rounded-xl border border-gray-700 hover:border-[#30C55A] transform hover:scale-[1.02] transition-all duration-300">
+              <div key={index} className="bg-gray-900/50 backdrop-blur-sm p-8 rounded-xl border border-gray-700 hover:border-[#30C55A] hover:shadow-[0_0_20px_rgba(48,197,90,0.3)] transform hover:scale-[1.02] transition-all duration-300">
                 <h3 className="text-xl font-bold mb-4 flex items-center gap-3">
                   <span className="text-3xl">{achievement.icon}</span>
                   {achievement.title}
@@ -206,21 +206,10 @@ function App() {
           {/* Programming Languages */}
           <div className="mb-10">
             <h3 className="text-2xl font-bold mb-6 text-white">💻 Programming Languages</h3>
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
-              {[
-                { name: 'Python', level: 90 },
-                { name: 'R', level: 85 },
-                { name: 'JavaScript', level: 80 },
-                { name: 'Java', level: 75 },
-                { name: 'TypeScript', level: 75 },
-                { name: 'HTML/CSS', level: 85 }
-              ].map((skill, index) => (
-                <div key={skill.name} className="bg-gray-900/50 backdrop-blur-sm p-4 rounded-xl text-center border border-gray-700 hover:border-[#30C55A] transition-all duration-300 transform hover:scale-105">
-                  <span className="font-bold text-white text-sm">{skill.name}</span>
-                  <div className="mt-2 w-full bg-gray-700 rounded-full h-2">
-                    <div className={`h-2 bg-gradient-to-r from-[#30C55A] to-[#25A049] rounded-full transition-all duration-1000`} style={{ width: `${skill.level}%` }}></div>
-                  </div>
-                  <div className="text-xs text-gray-400 mt-1">{skill.level}%</div>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+              {['Python', 'R', 'JavaScript', 'Java', 'TypeScript', 'HTML/CSS'].map((skill, index) => (
+                <div key={skill} className="bg-gray-900/50 backdrop-blur-sm px-6 py-4 rounded-xl text-center border border-gray-700 hover:border-[#30C55A] hover:shadow-[0_0_20px_rgba(48,197,90,0.3)] transition-all duration-300 transform hover:scale-105">
+                  <span className="font-bold text-white">{skill}</span>
                 </div>
               ))}
             </div>
@@ -230,20 +219,9 @@ function App() {
           <div className="mb-10">
             <h3 className="text-2xl font-bold mb-6 text-white">📈 Data Science & Analytics</h3>
             <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-              {[
-                { name: 'Statistical Analysis', level: 90 },
-                { name: 'Machine Learning', level: 85 },
-                { name: 'Data Visualization', level: 88 },
-                { name: 'Computational Statistics', level: 92 },
-                { name: 'Time Series Analysis', level: 80 },
-                { name: 'Bayesian Statistics', level: 75 }
-              ].map((skill, index) => (
-                <div key={skill.name} className="bg-gray-900/50 backdrop-blur-sm p-4 rounded-xl text-center border border-gray-700 hover:border-[#30C55A] transition-all duration-300">
-                  <span className="font-bold text-white text-sm">{skill.name}</span>
-                  <div className="mt-2 w-full bg-gray-700 rounded-full h-2">
-                    <div className={`h-2 bg-gradient-to-r from-[#30C55A] to-[#25A049] rounded-full transition-all duration-1000`} style={{ width: `${skill.level}%` }}></div>
-                  </div>
-                  <div className="text-xs text-gray-400 mt-1">{skill.level}%</div>
+              {['Statistical Analysis', 'Machine Learning', 'Data Visualization', 'Computational Statistics', 'Time Series Analysis', 'Bayesian Statistics'].map((skill, index) => (
+                <div key={skill} className="bg-gray-900/50 backdrop-blur-sm px-6 py-4 rounded-xl text-center border border-gray-700 hover:border-[#30C55A] hover:shadow-[0_0_20px_rgba(48,197,90,0.3)] transition-all duration-300 transform hover:scale-105">
+                  <span className="font-bold text-white">{skill}</span>
                 </div>
               ))}
             </div>
@@ -254,7 +232,7 @@ function App() {
             <h3 className="text-2xl font-bold mb-6 text-white">🛠️ Tools & Technologies</h3>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
               {['SQL', 'Git/GitHub', 'Jupyter', 'RStudio', 'Power BI', 'Excel', 'React', 'Node.js'].map((skill, index) => (
-                <div key={skill} className="bg-gray-900/50 backdrop-blur-sm px-6 py-4 rounded-xl text-center border border-gray-700 hover:border-[#30C55A] hover:bg-gray-800/50 transition-all duration-300 transform hover:scale-105">
+                <div key={skill} className="bg-gray-900/50 backdrop-blur-sm px-6 py-4 rounded-xl text-center border border-gray-700 hover:border-[#30C55A] hover:shadow-[0_0_20px_rgba(48,197,90,0.3)] transition-all duration-300 transform hover:scale-105">
                   <span className="font-bold text-white">{skill}</span>
                 </div>
               ))}
@@ -265,20 +243,9 @@ function App() {
           <div>
             <h3 className="text-2xl font-bold mb-6 text-white">👥 Leadership & Soft Skills</h3>
             <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-              {[
-                { name: 'Leadership', level: 95 },
-                { name: 'Teamwork', level: 98 },
-                { name: 'Communication', level: 90 },
-                { name: 'Problem Solving', level: 92 },
-                { name: 'Adaptability', level: 88 },
-                { name: 'Work Ethic', level: 95 }
-              ].map((skill, index) => (
-                <div key={skill.name} className="bg-gray-900/50 backdrop-blur-sm p-4 rounded-xl text-center border border-gray-700 hover:border-[#30C55A] transition-all duration-300">
-                  <span className="font-bold text-white text-sm">{skill.name}</span>
-                  <div className="mt-2 w-full bg-gray-700 rounded-full h-2">
-                    <div className={`h-2 bg-gradient-to-r from-[#30C55A] to-[#25A049] rounded-full transition-all duration-1000`} style={{ width: `${skill.level}%` }}></div>
-                  </div>
-                  <div className="text-xs text-gray-400 mt-1">{skill.level}%</div>
+              {['Leadership', 'Teamwork', 'Communication', 'Problem Solving', 'Adaptability', 'Work Ethic'].map((skill, index) => (
+                <div key={skill} className="bg-gray-900/50 backdrop-blur-sm px-6 py-4 rounded-xl text-center border border-gray-700 hover:border-[#30C55A] hover:shadow-[0_0_20px_rgba(48,197,90,0.3)] transition-all duration-300 transform hover:scale-105">
+                  <span className="font-bold text-white">{skill}</span>
                 </div>
               ))}
             </div>
@@ -288,7 +255,7 @@ function App() {
         {/* Education */}
         <section className="mb-20">
           <h2 className="text-4xl font-bold mb-8 neon-text">EDUCATION</h2>
-          <div className="bg-gray-900/50 backdrop-blur-sm p-8 rounded-xl border border-gray-700 hover:border-[#30C55A] transition-all duration-300">
+          <div className="bg-gray-900/50 backdrop-blur-sm p-8 rounded-xl border border-gray-700 hover:border-[#30C55A] hover:shadow-[0_0_20px_rgba(48,197,90,0.3)] transition-all duration-300 transform hover:scale-[1.02]">
             <h3 className="text-2xl font-bold text-white mb-2">Bachelor of Philosophy (Honours)</h3>
             <p className="neon-text text-lg mb-4">University of Western Australia • July 2025</p>
             <p className="text-gray-300 text-lg mb-4">
