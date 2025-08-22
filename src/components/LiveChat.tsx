@@ -50,7 +50,7 @@ const LiveChat: React.FC = () => {
     if (isOpen && unreadCount > 0) {
       setUnreadCount(0);
     }
-  }, [isOpen]);
+  }, [isOpen]); // eslint-disable-line react-hooks/exhaustive-deps
 
   // Simulate real-time status updates
   useEffect(() => {

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { motion } from 'framer-motion';
 // Removed react-icons imports - using emojis instead for better TypeScript compatibility
 
@@ -33,7 +33,7 @@ const GitHubActivity: React.FC = () => {
 
   const username = '0scarTheCoder'; // Your GitHub username
 
-  const fetchGitHubActivity = async () => {
+  const fetchGitHubActivity = useCallback(async () => {
     try {
       // Fetch recent events
       const eventsResponse = await fetch(`https://api.github.com/users/${username}/events/public`);
@@ -69,7 +69,7 @@ const GitHubActivity: React.FC = () => {
       console.error('Error fetching GitHub data:', error);
       setLoading(false);
     }
-  };
+  }, [username]);
 
   const calculateStreak = (events: any[]) => {
     const commitDates = events
@@ -126,7 +126,7 @@ const GitHubActivity: React.FC = () => {
     const interval = setInterval(fetchGitHubActivity, 5 * 60 * 1000);
     
     return () => clearInterval(interval);
-  }, []);
+  }, [fetchGitHubActivity]);
 
   return (
     <motion.div
