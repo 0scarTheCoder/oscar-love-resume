@@ -11,28 +11,8 @@ function App() {
   return (
     <div className="min-h-screen animated-background" style={{ 
       backgroundColor: '#0D1117',
-      fontFamily: "'Space Grotesk', 'Roboto Mono', sans-serif",
-      background: 'linear-gradient(-45deg, #0D1117, #161B22, #0D1117, #21262D)',
-      backgroundSize: '400% 400%',
-      animation: 'gradientShift 15s ease infinite'
+      fontFamily: "'Space Grotesk', 'Roboto Mono', sans-serif"
     }}>
-      <style jsx>{`
-        @keyframes gradientShift {
-          0% { background-position: 0% 50%; }
-          50% { background-position: 100% 50%; }
-          100% { background-position: 0% 50%; }
-        }
-        .neon-glow {
-          text-shadow: 0 0 5px #30C55A, 0 0 10px #30C55A, 0 0 15px #30C55A;
-        }
-        .neon-border {
-          box-shadow: 0 0 5px #30C55A, 0 0 10px #30C55A, inset 0 0 10px rgba(48, 197, 90, 0.1);
-        }
-        .neon-text {
-          color: #30C55A;
-          text-shadow: 0 0 10px #30C55A;
-        }
-      `}</style>
 
       {/* Main Content Container */}
       <div className="max-w-6xl mx-auto px-8 py-20 text-white">
