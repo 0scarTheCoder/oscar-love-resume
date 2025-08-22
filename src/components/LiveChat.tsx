@@ -1,13 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { 
-  FaComments, 
-  FaTimes, 
-  FaPaperPlane, 
-  FaCircle, 
-  FaUser,
-  FaRobot
-} from 'react-icons/fa';
+// Removed react-icons imports - using emojis instead for better TypeScript compatibility
 
 interface Message {
   id: string;
@@ -183,8 +176,8 @@ const LiveChat: React.FC = () => {
         onClick={() => setIsOpen(!isOpen)}
         className="fixed bottom-6 right-6 z-50 bg-blue-600 hover:bg-blue-700 text-white p-4 rounded-full shadow-lg transition-colors"
       >
-        <div className="relative">
-          {isOpen ? <FaTimes size={24} /> : <FaComments size={24} />}
+        <div className="relative text-2xl">
+          {isOpen ? '✕' : '💬'}
           {unreadCount > 0 && !isOpen && (
             <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full w-6 h-6 flex items-center justify-center">
               {unreadCount}
@@ -207,8 +200,8 @@ const LiveChat: React.FC = () => {
               <div className="flex items-center justify-between">
                 <div className="flex items-center space-x-3">
                   <div className="relative">
-                    <div className="w-10 h-10 bg-blue-500 rounded-full flex items-center justify-center">
-                      <FaUser size={16} />
+                    <div className="w-10 h-10 bg-blue-500 rounded-full flex items-center justify-center text-white">
+                      👤
                     </div>
                     <div className={`absolute -bottom-1 -right-1 w-4 h-4 rounded-full border-2 border-white ${
                       oscarStatus.isOnline ? 'bg-green-500' : 'bg-gray-400'
@@ -219,7 +212,7 @@ const LiveChat: React.FC = () => {
                     <p className="text-xs opacity-90">
                       {oscarStatus.isOnline ? (
                         <span className="flex items-center gap-1">
-                          <FaCircle size={6} className="text-green-400" />
+                          <span className="w-2 h-2 bg-green-400 rounded-full"></span>
                           Online
                         </span>
                       ) : (
@@ -230,9 +223,9 @@ const LiveChat: React.FC = () => {
                 </div>
                 <button
                   onClick={() => setIsOpen(false)}
-                  className="text-white hover:text-gray-200 transition-colors"
+                  className="text-white hover:text-gray-200 transition-colors text-lg"
                 >
-                  <FaTimes size={18} />
+                  ✕
                 </button>
               </div>
             </div>
@@ -294,7 +287,9 @@ const LiveChat: React.FC = () => {
                       }`}>
                         {message.sender !== 'user' && (
                           <div className="flex items-center gap-2 mb-1">
-                            {message.sender === 'oscar' ? <FaUser size={12} /> : <FaRobot size={12} />}
+                            <span className="text-xs">
+                              {message.sender === 'oscar' ? '👤' : '🤖'}
+                            </span>
                             <span className="text-xs opacity-70">
                               {message.sender === 'oscar' ? 'Oscar' : 'Auto-reply'}
                             </span>
@@ -353,7 +348,7 @@ const LiveChat: React.FC = () => {
                       disabled={!newMessage.trim()}
                       className="bg-blue-600 hover:bg-blue-700 disabled:bg-gray-400 text-white p-2 rounded-md transition-colors"
                     >
-                      <FaPaperPlane size={16} />
+                      ➤
                     </motion.button>
                   </div>
                 </div>

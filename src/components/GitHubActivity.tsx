@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { FaGithub, FaStar, FaCodeBranch, FaCommit } from 'react-icons/fa';
+// Removed react-icons imports - using emojis instead for better TypeScript compatibility
 
 interface GitHubEvent {
   id: string;
@@ -76,7 +76,7 @@ const GitHubActivity: React.FC = () => {
       .filter(event => event.type === 'PushEvent')
       .map(event => new Date(event.created_at).toDateString());
     
-    const uniqueDates = [...new Set(commitDates)];
+    const uniqueDates = Array.from(new Set(commitDates));
     return uniqueDates.length;
   };
 
@@ -93,13 +93,20 @@ const GitHubActivity: React.FC = () => {
   };
 
   const getEventIcon = (type: string) => {
-    switch (type) {
-      case 'PushEvent': return <FaCommit className="text-green-500" />;
-      case 'CreateEvent': return <FaCodeBranch className="text-blue-500" />;
-      case 'WatchEvent': return <FaStar className="text-yellow-500" />;
-      case 'ForkEvent': return <FaCodeBranch className="text-purple-500" />;
-      default: return <FaGithub className="text-gray-500" />;
-    }
+    const config = {
+      'PushEvent': { emoji: '📤', color: 'text-green-500' },
+      'CreateEvent': { emoji: '🆕', color: 'text-blue-500' },
+      'WatchEvent': { emoji: '⭐', color: 'text-yellow-500' },
+      'ForkEvent': { emoji: '🔀', color: 'text-purple-500' }
+    } as const;
+    
+    const eventConfig = config[type as keyof typeof config] || { emoji: '📄', color: 'text-gray-500' };
+    
+    return (
+      <span className={`text-lg ${eventConfig.color}`}>
+        {eventConfig.emoji}
+      </span>
+    );
   };
 
   const formatTimeAgo = (dateString: string) => {
@@ -129,7 +136,7 @@ const GitHubActivity: React.FC = () => {
     >
       <div className="flex items-center justify-between mb-6">
         <h3 className="text-xl font-bold text-gray-900 dark:text-white flex items-center gap-2">
-          <FaGithub className="text-2xl" />
+          <span className="text-2xl">📊</span>
           Live GitHub Activity
         </h3>
         <div className="flex items-center gap-2">
