@@ -26,6 +26,7 @@ const LiveChat: React.FC = () => {
   const [userInfo, setUserInfo] = useState({ name: '', email: '' });
   const [isConnected, setIsConnected] = useState(false);
   const [showUserForm, setShowUserForm] = useState(true);
+  const [hasInitialized, setHasInitialized] = useState(false);
   
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const chatInputRef = useRef<HTMLInputElement>(null);
@@ -52,8 +53,17 @@ const LiveChat: React.FC = () => {
     }
   }, [isOpen]); // eslint-disable-line react-hooks/exhaustive-deps
 
-  // Simulate real-time status updates
+  // Initialize chat and status updates
   useEffect(() => {
+    // Show initial notification after 3 seconds
+    setTimeout(() => {
+      if (!hasInitialized) {
+        setUnreadCount(1);
+        setHasInitialized(true);
+      }
+    }, 3000);
+
+    // Simulate real-time status updates
     const statusInterval = setInterval(() => {
       setOscarStatus(prev => ({
         ...prev,
@@ -63,7 +73,7 @@ const LiveChat: React.FC = () => {
     }, 30000); // Update every 30 seconds
 
     return () => clearInterval(statusInterval);
-  }, []);
+  }, [hasInitialized]);
 
   // Enhanced AI-style chatbot with conversation context
   const [conversationContext, setConversationContext] = useState<string[]>([]);
@@ -287,7 +297,8 @@ const LiveChat: React.FC = () => {
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.9 }}
         onClick={() => setIsOpen(!isOpen)}
-        className="fixed bottom-6 right-6 z-50 bg-blue-600 hover:bg-blue-700 text-white p-4 rounded-full shadow-lg transition-colors"
+        className="fixed bottom-6 right-6 z-[9999] bg-blue-600 hover:bg-blue-700 text-white p-4 rounded-full shadow-2xl transition-colors border-2 border-white"
+        style={{ zIndex: 9999 }}
       >
         <div className="relative text-2xl">
           {isOpen ? '✕' : '💬'}
