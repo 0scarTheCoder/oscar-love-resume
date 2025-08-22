@@ -27,7 +27,7 @@ function App() {
           <h1 className="text-6xl font-bold mb-4 neon-glow" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
             OSCAR LOVE
           </h1>
-          <p className="text-2xl neon-text font-medium mb-6">Full-Stack Developer</p>
+          <p className="text-2xl neon-text font-medium mb-6">Data Science & Software Engineering Graduate</p>
           <div className="flex justify-center gap-8 text-gray-300 text-lg">
             <span className="hover:text-white transition-colors">📧 oscar.love.dev@gmail.com</span>
             <span className="hover:text-white transition-colors">🌐 Remote Worldwide</span>
@@ -61,11 +61,33 @@ function App() {
         <section className="mb-20">
           <h2 className="text-4xl font-bold mb-8 neon-text">ABOUT</h2>
           <div className="bg-gray-900/30 backdrop-blur-sm rounded-xl p-8 border border-gray-700">
-            <p className="text-xl text-gray-300 leading-relaxed">
-              Passionate full-stack developer specializing in cutting-edge web technologies. 
-              I architect scalable solutions using React, TypeScript, and Node.js while creating 
-              exceptional user experiences that push the boundaries of modern web development.
+            <p className="text-xl text-gray-300 leading-relaxed mb-6">
+              I'm a determined, hardworking, and friendly individual who gets on well with people 
+              of all ages. My excellent teamwork and leadership skills have been demonstrated through 
+              commitment to and experience in many sporting teams, including as a junior Australian 
+              volleyball representative.
             </p>
+            <p className="text-xl text-gray-300 leading-relaxed">
+              Recently graduated with a Bachelor of Philosophy (Honours) in Computer Science and Software 
+              Engineering from UWA (July 2025), majoring in Data Science, Mathematics and Statistics. 
+              I'm passionate about using technology to solve real-world problems and always strive to 
+              improve and develop professionally.
+            </p>
+          </div>
+          
+          {/* Stats */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-8">
+            {[
+              { label: 'ATAR Score', value: '99.35' },
+              { label: 'Current WAM', value: '76' },
+              { label: 'Hackathon Wins', value: '2' },
+              { label: 'Years Experience', value: '6+' }
+            ].map((stat, index) => (
+              <div key={stat.label} className="text-center p-6 bg-gray-900/50 backdrop-blur-sm rounded-xl border border-gray-700 hover:border-[#30C55A] transition-all duration-300">
+                <div className="text-3xl font-bold neon-text mb-2">{stat.value}</div>
+                <div className="text-sm text-gray-400">{stat.label}</div>
+              </div>
+            ))}
           </div>
         </section>
 
@@ -75,22 +97,46 @@ function App() {
           <div className="space-y-8">
             <div className="relative pl-8 border-l-4 border-[#30C55A] glow-border">
               <div className="absolute -left-2 top-0 w-4 h-4 bg-[#30C55A] rounded-full animate-pulse"></div>
-              <h3 className="text-2xl font-bold text-white">Senior Full-Stack Developer</h3>
-              <p className="neon-text text-lg mb-4">Tech Company • 2022 - Present</p>
+              <h3 className="text-2xl font-bold text-white">Theatre Orderly</h3>
+              <p className="neon-text text-lg mb-4">St John Of God's Hospital Subiaco • January 2022 - Current</p>
               <ul className="text-gray-300 space-y-2 text-lg">
-                <li>⚡ Architected scalable web applications with React, TypeScript & Node.js</li>
-                <li>⚡ Implemented real-time features and seamless API integrations</li>
-                <li>⚡ Led development of responsive, cutting-edge user interfaces</li>
+                <li>⚡ Assist medical staff in operating theatre procedures</li>
+                <li>⚡ Maintain sterile environments and equipment</li>
+                <li>⚡ Provide patient care and support during surgical procedures</li>
+                <li>⚡ Collaborate with multidisciplinary healthcare teams</li>
               </ul>
             </div>
             <div className="relative pl-8 border-l-4 border-[#30C55A] glow-border">
-              <div className="absolute -left-2 top-0 w-4 h-4 bg-[#30C55A] rounded-full"></div>
-              <h3 className="text-2xl font-bold text-white">Frontend Developer</h3>
-              <p className="neon-text text-lg mb-4">Startup Inc • 2020 - 2022</p>
+              <div className="absolute -left-2 top-0 w-4 h-4 bg-[#30C55A] rounded-full animate-pulse"></div>
+              <h3 className="text-2xl font-bold text-white">Data Management Intern</h3>
+              <p className="neon-text text-lg mb-4">Vitruvian • August 2021 - December 2021</p>
               <ul className="text-gray-300 space-y-2 text-lg">
-                <li>⚡ Built modern React applications with advanced TypeScript</li>
-                <li>⚡ Collaborated on pixel-perfect, award-winning UI implementations</li>
-                <li>⚡ Optimized performance achieving 95+ Lighthouse scores</li>
+                <li>⚡ Managed and analyzed large datasets</li>
+                <li>⚡ Developed data visualization and reporting tools</li>
+                <li>⚡ Collaborated with senior data scientists on projects</li>
+                <li>⚡ Gained experience in statistical analysis and machine learning</li>
+              </ul>
+            </div>
+            <div className="relative pl-8 border-l-4 border-[#30C55A] glow-border">
+              <div className="absolute -left-2 top-0 w-4 h-4 bg-[#30C55A] rounded-full animate-pulse"></div>
+              <h3 className="text-2xl font-bold text-white">Private Tutor</h3>
+              <p className="neon-text text-lg mb-4">Private Practice • January 2018 - Current</p>
+              <ul className="text-gray-300 space-y-2 text-lg">
+                <li>⚡ Provide personalized academic support across multiple subjects</li>
+                <li>⚡ Develop tailored learning strategies for individual students</li>
+                <li>⚡ Help students achieve significant grade improvements</li>
+                <li>⚡ Specializing in mathematics, physics, and data science</li>
+              </ul>
+            </div>
+            <div className="relative pl-8 border-l-4 border-[#30C55A] glow-border">
+              <div className="absolute -left-2 top-0 w-4 h-4 bg-[#30C55A] rounded-full animate-pulse"></div>
+              <h3 className="text-2xl font-bold text-white">Volleyball Referee</h3>
+              <p className="neon-text text-lg mb-4">VWA • March 2021 - Current</p>
+              <ul className="text-gray-300 space-y-2 text-lg">
+                <li>⚡ Officiate volleyball matches at various competition levels</li>
+                <li>⚡ Make quick, accurate decisions under pressure</li>
+                <li>⚡ Maintain game flow and ensure fair play</li>
+                <li>⚡ Level 2 certified referee</li>
               </ul>
             </div>
           </div>
@@ -135,17 +181,19 @@ function App() {
           <h2 className="text-4xl font-bold mb-8 neon-text">ACHIEVEMENTS</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {[
-              { icon: "🚀", title: "Built 20+ Web Applications", desc: "From simple landing pages to complex full-stack systems" },
-              { icon: "⭐", title: "5-Star Client Ratings", desc: "Consistently delivering exceptional solutions on time" },
-              { icon: "🔧", title: "Modern Tech Stack Expert", desc: "React, TypeScript, Node.js, AWS, and cutting-edge tools" },
-              { icon: "🌍", title: "Global Remote Experience", desc: "Successfully collaborated with international teams" }
+              { icon: "🏆", title: "1st Place SLB Data Science Hackathon", desc: "Won first place among WA university students in October 2023" },
+              { icon: "🥈", title: "2nd Place UWA WHACK WesCEF Hackathon", desc: "Secured second place in September 2023" },
+              { icon: "🎯", title: "ATAR 99.35", desc: "Achieved top 1% of students in Western Australia" },
+              { icon: "🏐", title: "Australian Volleyball Representative", desc: "Selected for Australian teams U17s, U18s & U19s (2017-2019)" },
+              { icon: "👨‍🎓", title: "Bachelor of Philosophy (Honours)", desc: "Computer Science & Software Engineering from UWA, majoring in Data Science" },
+              { icon: "🥇", title: "Unisport Nationals Volleyball Champion", desc: "Team member of championship-winning university team (2022)" }
             ].map((achievement, index) => (
               <div key={index} className="bg-gray-900/50 backdrop-blur-sm p-8 rounded-xl border border-gray-700 hover:border-[#30C55A] transform hover:scale-[1.02] transition-all duration-300">
-                <h3 className="text-2xl font-bold mb-4 flex items-center gap-3">
+                <h3 className="text-xl font-bold mb-4 flex items-center gap-3">
                   <span className="text-3xl">{achievement.icon}</span>
                   {achievement.title}
                 </h3>
-                <p className="text-gray-300 text-lg">{achievement.desc}</p>
+                <p className="text-gray-300 text-base">{achievement.desc}</p>
               </div>
             ))}
           </div>
@@ -154,12 +202,86 @@ function App() {
         {/* Skills */}
         <section className="mb-20">
           <h2 className="text-4xl font-bold mb-8 neon-text">SKILLS</h2>
-          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
-            {['React', 'TypeScript', 'Node.js', 'JavaScript', 'Python', 'AWS', 'MongoDB', 'PostgreSQL', 'Git', 'Docker', 'REST APIs', 'GraphQL'].map((skill, index) => (
-              <div key={skill} className="bg-gray-900/50 backdrop-blur-sm px-6 py-4 rounded-xl text-center border border-gray-700 hover:border-[#30C55A] hover:bg-gray-800/50 transition-all duration-300 transform hover:scale-105">
-                <span className="font-bold text-white">{skill}</span>
-              </div>
-            ))}
+          
+          {/* Programming Languages */}
+          <div className="mb-10">
+            <h3 className="text-2xl font-bold mb-6 text-white">💻 Programming Languages</h3>
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+              {[
+                { name: 'Python', level: 90 },
+                { name: 'R', level: 85 },
+                { name: 'JavaScript', level: 80 },
+                { name: 'Java', level: 75 },
+                { name: 'TypeScript', level: 75 },
+                { name: 'HTML/CSS', level: 85 }
+              ].map((skill, index) => (
+                <div key={skill.name} className="bg-gray-900/50 backdrop-blur-sm p-4 rounded-xl text-center border border-gray-700 hover:border-[#30C55A] transition-all duration-300 transform hover:scale-105">
+                  <span className="font-bold text-white text-sm">{skill.name}</span>
+                  <div className="mt-2 w-full bg-gray-700 rounded-full h-2">
+                    <div className={`h-2 bg-gradient-to-r from-[#30C55A] to-[#25A049] rounded-full transition-all duration-1000`} style={{ width: `${skill.level}%` }}></div>
+                  </div>
+                  <div className="text-xs text-gray-400 mt-1">{skill.level}%</div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Data Science & Analytics */}
+          <div className="mb-10">
+            <h3 className="text-2xl font-bold mb-6 text-white">📈 Data Science & Analytics</h3>
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+              {[
+                { name: 'Statistical Analysis', level: 90 },
+                { name: 'Machine Learning', level: 85 },
+                { name: 'Data Visualization', level: 88 },
+                { name: 'Computational Statistics', level: 92 },
+                { name: 'Time Series Analysis', level: 80 },
+                { name: 'Bayesian Statistics', level: 75 }
+              ].map((skill, index) => (
+                <div key={skill.name} className="bg-gray-900/50 backdrop-blur-sm p-4 rounded-xl text-center border border-gray-700 hover:border-[#30C55A] transition-all duration-300">
+                  <span className="font-bold text-white text-sm">{skill.name}</span>
+                  <div className="mt-2 w-full bg-gray-700 rounded-full h-2">
+                    <div className={`h-2 bg-gradient-to-r from-[#30C55A] to-[#25A049] rounded-full transition-all duration-1000`} style={{ width: `${skill.level}%` }}></div>
+                  </div>
+                  <div className="text-xs text-gray-400 mt-1">{skill.level}%</div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Tools & Technologies */}
+          <div className="mb-10">
+            <h3 className="text-2xl font-bold mb-6 text-white">🛠️ Tools & Technologies</h3>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+              {['SQL', 'Git/GitHub', 'Jupyter', 'RStudio', 'Power BI', 'Excel', 'React', 'Node.js'].map((skill, index) => (
+                <div key={skill} className="bg-gray-900/50 backdrop-blur-sm px-6 py-4 rounded-xl text-center border border-gray-700 hover:border-[#30C55A] hover:bg-gray-800/50 transition-all duration-300 transform hover:scale-105">
+                  <span className="font-bold text-white">{skill}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Soft Skills */}
+          <div>
+            <h3 className="text-2xl font-bold mb-6 text-white">👥 Leadership & Soft Skills</h3>
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+              {[
+                { name: 'Leadership', level: 95 },
+                { name: 'Teamwork', level: 98 },
+                { name: 'Communication', level: 90 },
+                { name: 'Problem Solving', level: 92 },
+                { name: 'Adaptability', level: 88 },
+                { name: 'Work Ethic', level: 95 }
+              ].map((skill, index) => (
+                <div key={skill.name} className="bg-gray-900/50 backdrop-blur-sm p-4 rounded-xl text-center border border-gray-700 hover:border-[#30C55A] transition-all duration-300">
+                  <span className="font-bold text-white text-sm">{skill.name}</span>
+                  <div className="mt-2 w-full bg-gray-700 rounded-full h-2">
+                    <div className={`h-2 bg-gradient-to-r from-[#30C55A] to-[#25A049] rounded-full transition-all duration-1000`} style={{ width: `${skill.level}%` }}></div>
+                  </div>
+                  <div className="text-xs text-gray-400 mt-1">{skill.level}%</div>
+                </div>
+              ))}
+            </div>
           </div>
         </section>
 
@@ -167,12 +289,29 @@ function App() {
         <section className="mb-20">
           <h2 className="text-4xl font-bold mb-8 neon-text">EDUCATION</h2>
           <div className="bg-gray-900/50 backdrop-blur-sm p-8 rounded-xl border border-gray-700 hover:border-[#30C55A] transition-all duration-300">
-            <h3 className="text-2xl font-bold text-white mb-2">Self-Taught Developer</h3>
-            <p className="neon-text text-lg mb-4">Continuous Learning • 2018 - Present</p>
-            <p className="text-gray-300 text-lg">
-              Passionate about mastering new technologies through hands-on projects, advanced courses, 
-              and staying at the forefront of web development innovation.
+            <h3 className="text-2xl font-bold text-white mb-2">Bachelor of Philosophy (Honours)</h3>
+            <p className="neon-text text-lg mb-4">University of Western Australia • July 2025</p>
+            <p className="text-gray-300 text-lg mb-4">
+              Computer Science and Software Engineering, majoring in Data Science, Mathematics and Statistics
             </p>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-6">
+              <div className="text-center">
+                <div className="text-2xl font-bold neon-text">99.35</div>
+                <div className="text-sm text-gray-400">ATAR Score</div>
+              </div>
+              <div className="text-center">
+                <div className="text-2xl font-bold neon-text">76</div>
+                <div className="text-sm text-gray-400">Current WAM</div>
+              </div>
+              <div className="text-center">
+                <div className="text-2xl font-bold neon-text">2</div>
+                <div className="text-sm text-gray-400">Hackathon Wins</div>
+              </div>
+              <div className="text-center">
+                <div className="text-2xl font-bold neon-text">Honours</div>
+                <div className="text-sm text-gray-400">Degree Level</div>
+              </div>
+            </div>
           </div>
         </section>
 
