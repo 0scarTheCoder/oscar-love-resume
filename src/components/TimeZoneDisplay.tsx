@@ -102,25 +102,25 @@ const TimeZoneDisplay: React.FC = () => {
     <motion.div
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
-      className="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6 border border-gray-200 dark:border-gray-700"
+      className="bg-black rounded-lg p-6 border border-[#30C55A] hover:shadow-[0_0_20px_rgba(48,197,90,0.3)] transition-all duration-300"
     >
       <div className="flex items-center justify-between mb-6">
-        <h3 className="text-xl font-bold text-gray-900 dark:text-white flex items-center gap-2">
+        <h3 className="text-xl font-bold text-[#30C55A] flex items-center gap-2">
           <span className="text-2xl">🌍</span>
           Live Timezone Status
         </h3>
         <div className="flex items-center gap-2">
-          <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
-          <span className="text-sm text-gray-500 dark:text-gray-400">Live</span>
+          <div className="w-2 h-2 bg-[#30C55A] rounded-full animate-pulse"></div>
+          <span className="text-sm text-[#30C55A]">Live</span>
         </div>
       </div>
 
       {/* Current Availability Status */}
-      <div className="mb-6 p-4 bg-blue-50 dark:bg-blue-900/20 rounded-lg">
-        <h4 className="font-semibold text-blue-900 dark:text-blue-300 mb-2">
+      <div className="mb-6 p-4 bg-gray-900/50 border border-[#30C55A]/30 rounded-lg">
+        <h4 className="font-semibold text-[#30C55A] mb-2">
           🎯 Current Availability
         </h4>
-        <p className="text-blue-800 dark:text-blue-200">
+        <p className="text-white">
           {currentStatus}
         </p>
       </div>
@@ -133,10 +133,10 @@ const TimeZoneDisplay: React.FC = () => {
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: index * 0.1 }}
-            className="bg-gray-50 dark:bg-gray-700 p-4 rounded-lg hover:shadow-md transition-shadow"
+            className="bg-gray-900/50 border border-[#30C55A]/30 p-4 rounded-lg hover:shadow-[0_0_15px_rgba(48,197,90,0.2)] transition-all duration-300"
           >
             <div className="flex items-center justify-between mb-2">
-              <h5 className="font-semibold text-gray-900 dark:text-white">
+              <h5 className="font-semibold text-[#30C55A]">
                 {tz.city}
               </h5>
               <span className="text-lg">
@@ -144,7 +144,7 @@ const TimeZoneDisplay: React.FC = () => {
               </span>
             </div>
             
-            <div className="text-2xl font-mono text-gray-800 dark:text-gray-200 mb-2">
+            <div className="text-2xl font-mono text-white mb-2">
               {tz.time}
             </div>
             
@@ -155,7 +155,7 @@ const TimeZoneDisplay: React.FC = () => {
         ))}
       </div>
 
-      <div className="mt-4 text-center text-sm text-gray-500 dark:text-gray-400">
+      <div className="mt-4 text-center text-sm text-[#30C55A]">
         💡 Best times to reach me: 9 AM - 5 PM AEST (Sydney time)
       </div>
     </motion.div>

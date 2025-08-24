@@ -112,16 +112,16 @@ const EarthquakeFeed: React.FC = () => {
     <motion.div
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
-      className="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6 border border-gray-200 dark:border-gray-700"
+      className="bg-black rounded-lg p-6 border border-[#30C55A] hover:shadow-[0_0_20px_rgba(48,197,90,0.3)] transition-all duration-300"
     >
       <div className="flex items-center justify-between mb-6">
-        <h3 className="text-xl font-bold text-gray-900 dark:text-white flex items-center gap-2">
+        <h3 className="text-xl font-bold text-[#30C55A] flex items-center gap-2">
           <span className="text-2xl">🌍</span>
           Live Earthquake Feed
         </h3>
         <div className="flex items-center gap-2">
-          <div className="w-2 h-2 bg-orange-500 rounded-full animate-pulse"></div>
-          <span className="text-sm text-gray-500 dark:text-gray-400">
+          <div className="w-2 h-2 bg-[#30C55A] rounded-full animate-pulse"></div>
+          <span className="text-sm text-[#30C55A]">
             Live • Updated {formatTimeAgo(lastUpdated.getTime())}
           </span>
         </div>
@@ -133,25 +133,25 @@ const EarthquakeFeed: React.FC = () => {
           <div className="text-lg font-bold text-red-500 dark:text-red-400">
             {earthquakes.filter(eq => eq.properties.mag >= 6).length}
           </div>
-          <div className="text-xs text-gray-600 dark:text-gray-400">Major (6.0+)</div>
+          <div className="text-xs text-white">Major (6.0+)</div>
         </div>
         <div className="text-center">
           <div className="text-lg font-bold text-orange-500 dark:text-orange-400">
             {earthquakes.filter(eq => eq.properties.mag >= 5 && eq.properties.mag < 6).length}
           </div>
-          <div className="text-xs text-gray-600 dark:text-gray-400">Strong (5.0+)</div>
+          <div className="text-xs text-white">Strong (5.0+)</div>
         </div>
         <div className="text-center">
           <div className="text-lg font-bold text-blue-500 dark:text-blue-400">
             {earthquakes.length}
           </div>
-          <div className="text-xs text-gray-600 dark:text-gray-400">Total (2.5+)</div>
+          <div className="text-xs text-white">Total (2.5+)</div>
         </div>
       </div>
 
       {/* Earthquake List */}
       <div>
-        <h4 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">Recent Activity</h4>
+        <h4 className="text-lg font-semibold text-[#30C55A] mb-4">Recent Activity</h4>
         
         {loading ? (
           <div className="space-y-3">

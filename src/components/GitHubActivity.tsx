@@ -132,16 +132,16 @@ const GitHubActivity: React.FC = () => {
     <motion.div
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
-      className="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6 border border-gray-200 dark:border-gray-700"
+      className="bg-black rounded-lg p-6 border border-[#30C55A] hover:shadow-[0_0_20px_rgba(48,197,90,0.3)] transition-all duration-300"
     >
       <div className="flex items-center justify-between mb-6">
-        <h3 className="text-xl font-bold text-gray-900 dark:text-white flex items-center gap-2">
+        <h3 className="text-xl font-bold text-[#30C55A] flex items-center gap-2">
           <span className="text-2xl">📊</span>
           Live GitHub Activity
         </h3>
         <div className="flex items-center gap-2">
-          <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
-          <span className="text-sm text-gray-500 dark:text-gray-400">
+          <div className="w-2 h-2 bg-[#30C55A] rounded-full animate-pulse"></div>
+          <span className="text-sm text-[#30C55A]">
             Live • Updated {formatTimeAgo(lastUpdated.toISOString())}
           </span>
         </div>
@@ -154,7 +154,7 @@ const GitHubActivity: React.FC = () => {
           className="bg-blue-50 dark:bg-blue-900/20 p-4 rounded-lg text-center"
         >
           <div className="text-2xl font-bold text-blue-600 dark:text-blue-400">{stats.totalCommits}</div>
-          <div className="text-sm text-gray-600 dark:text-gray-400">Recent Commits</div>
+          <div className="text-sm text-white">Recent Commits</div>
         </motion.div>
         
         <motion.div 
@@ -162,7 +162,7 @@ const GitHubActivity: React.FC = () => {
           className="bg-green-50 dark:bg-green-900/20 p-4 rounded-lg text-center"
         >
           <div className="text-2xl font-bold text-green-600 dark:text-green-400">{stats.currentStreak}</div>
-          <div className="text-sm text-gray-600 dark:text-gray-400">Activity Days</div>
+          <div className="text-sm text-white">Activity Days</div>
         </motion.div>
         
         <motion.div 
@@ -170,7 +170,7 @@ const GitHubActivity: React.FC = () => {
           className="bg-yellow-50 dark:bg-yellow-900/20 p-4 rounded-lg text-center"
         >
           <div className="text-2xl font-bold text-yellow-600 dark:text-yellow-400">{stats.totalStars}</div>
-          <div className="text-sm text-gray-600 dark:text-gray-400">Total Stars</div>
+          <div className="text-sm text-white">Total Stars</div>
         </motion.div>
         
         <motion.div 
@@ -178,13 +178,13 @@ const GitHubActivity: React.FC = () => {
           className="bg-purple-50 dark:bg-purple-900/20 p-4 rounded-lg text-center"
         >
           <div className="text-2xl font-bold text-purple-600 dark:text-purple-400">{stats.totalRepos}</div>
-          <div className="text-sm text-gray-600 dark:text-gray-400">Repositories</div>
+          <div className="text-sm text-white">Repositories</div>
         </motion.div>
       </div>
 
       {/* Activity Feed */}
       <div>
-        <h4 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">Recent Activity</h4>
+        <h4 className="text-lg font-semibold text-[#30C55A] mb-4">Recent Activity</h4>
         
         {loading ? (
           <div className="space-y-3">
@@ -212,7 +212,7 @@ const GitHubActivity: React.FC = () => {
                   {getEventIcon(event.type)}
                 </div>
                 <div className="flex-1 min-w-0">
-                  <p className="text-sm text-gray-900 dark:text-white">
+                  <p className="text-sm text-white">
                     <span className="font-medium">{formatEventType(event.type)}</span>
                     {' '}in{' '}
                     <a 
@@ -224,7 +224,7 @@ const GitHubActivity: React.FC = () => {
                       {event.repo.name}
                     </a>
                   </p>
-                  <p className="text-xs text-gray-500 dark:text-gray-400">
+                  <p className="text-xs text-[#30C55A]/70">
                     {formatTimeAgo(event.created_at)}
                   </p>
                 </div>

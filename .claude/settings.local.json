@@ -23,7 +23,12 @@
       "Bash(grep:*)",
       "Bash(cp:*)",
       "Bash(npx tsc:*)",
-      "Bash(npx vercel:*)"
+      "Bash(npx vercel:*)",
+      "Bash(npm install:*)",
+      "Bash(firebase login:*)",
+      "Bash(firebase init:*)",
+      "Bash(firebase projects:create:*)",
+      "Bash(firebase deploy:*)"
     ],
     "deny": [],
     "ask": []

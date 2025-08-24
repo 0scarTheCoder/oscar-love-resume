@@ -3,6 +3,7 @@ import GitHubActivity from './components/GitHubActivity';
 import TimeZoneDisplay from './components/TimeZoneDisplay';
 import EmbeddedChat from './components/EmbeddedChat';
 import EarthquakeFeed from './components/EarthquakeFeed';
+import Contact from './components/Contact';
 import './App.css';
 
 function App() {
@@ -297,7 +298,12 @@ function App() {
             ))}
           </div>
         </section>
+      </div>
 
+      {/* Contact Section - Full Width */}
+      <Contact />
+
+      <div className="max-w-7xl mx-auto px-8 text-white">
         {/* Footer */}
         <footer className="text-center text-gray-400 border-t border-gray-800 pt-12 text-lg">
           <p className="neon-text">© 2024 OSCAR LOVE • Built with React & TypeScript • Always Evolving 🚀</p>
