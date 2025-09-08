@@ -20,17 +20,12 @@ function App() {
           
         {/* Profile Section */}
         <section className="text-center mb-20">
-          <div className="inline-block p-1 rounded-full neon-border mb-8">
-            <div className="w-40 h-40 bg-gradient-to-br from-gray-800 to-gray-900 rounded-full flex items-center justify-center text-6xl">
-              👨‍💻
-            </div>
-          </div>
           <h1 className="text-6xl font-bold mb-4 neon-glow" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
             OSCAR LOVE
           </h1>
           <p className="text-2xl neon-text font-medium mb-6">Data Science & Software Engineering Graduate</p>
           <div className="flex justify-center gap-8 text-gray-300 text-lg">
-            <span className="hover:text-white transition-colors">📧 oscar.love.dev@gmail.com</span>
+            <span className="hover:text-white transition-colors">📧 loevoh19@gmail.com</span>
             <span className="hover:text-white transition-colors">🌐 Remote Worldwide</span>
           </div>
         </section>
