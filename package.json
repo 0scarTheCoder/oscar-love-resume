@@ -24,6 +24,8 @@
   "scripts": {
     "start": "craco start",
     "build": "craco build",
+    "build:firebase": "GENERATE_SOURCEMAP=false PUBLIC_URL=/ craco build",
+    "build:github": "GENERATE_SOURCEMAP=false craco build",
     "test": "craco test",
     "eject": "react-scripts eject"
   },

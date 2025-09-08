@@ -1,15 +1,12 @@
 {
   "files": {
-    "main.css": "/oscar-love-resume/static/css/main.ede9f6cd.css",
-    "main.js": "/oscar-love-resume/static/js/main.ceec3435.js",
-    "static/js/453.9fea17b9.chunk.js": "/oscar-love-resume/static/js/453.9fea17b9.chunk.js",
-    "index.html": "/oscar-love-resume/index.html",
-    "main.ede9f6cd.css.map": "/oscar-love-resume/static/css/main.ede9f6cd.css.map",
-    "main.ceec3435.js.map": "/oscar-love-resume/static/js/main.ceec3435.js.map",
-    "453.9fea17b9.chunk.js.map": "/oscar-love-resume/static/js/453.9fea17b9.chunk.js.map"
+    "main.css": "/oscar-love-resume/static/css/main.ab08a47b.css",
+    "main.js": "/oscar-love-resume/static/js/main.8a170d5a.js",
+    "static/js/206.38c57cd7.chunk.js": "/oscar-love-resume/static/js/206.38c57cd7.chunk.js",
+    "index.html": "/oscar-love-resume/index.html"
   },
   "entrypoints": [
-    "static/css/main.ede9f6cd.css",
-    "static/js/main.ceec3435.js"
+    "static/css/main.ab08a47b.css",
+    "static/js/main.8a170d5a.js"
   ]
 }

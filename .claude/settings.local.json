@@ -35,7 +35,9 @@
       "Bash(firebase projects:list:*)",
       "Bash(firebase hosting:sites:*)",
       "Bash(curl:*)",
-      "Bash(gh secret set:*)"
+      "Bash(gh secret set:*)",
+      "WebFetch(domain:myresume-115cf.web.app)",
+      "WebFetch(domain:0scarthecoder.github.io)"
     ],
     "deny": [],
     "ask": []
