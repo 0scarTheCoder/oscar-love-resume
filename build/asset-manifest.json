@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/static/css/main.ede9f6cd.css",
-    "main.js": "/static/js/main.3dfa7632.js",
-    "static/js/453.9fea17b9.chunk.js": "/static/js/453.9fea17b9.chunk.js",
-    "index.html": "/index.html",
-    "main.ede9f6cd.css.map": "/static/css/main.ede9f6cd.css.map",
-    "main.3dfa7632.js.map": "/static/js/main.3dfa7632.js.map",
-    "453.9fea17b9.chunk.js.map": "/static/js/453.9fea17b9.chunk.js.map"
+    "main.css": "/oscar-love-resume/static/css/main.ede9f6cd.css",
+    "main.js": "/oscar-love-resume/static/js/main.ceec3435.js",
+    "static/js/453.9fea17b9.chunk.js": "/oscar-love-resume/static/js/453.9fea17b9.chunk.js",
+    "index.html": "/oscar-love-resume/index.html",
+    "main.ede9f6cd.css.map": "/oscar-love-resume/static/css/main.ede9f6cd.css.map",
+    "main.ceec3435.js.map": "/oscar-love-resume/static/js/main.ceec3435.js.map",
+    "453.9fea17b9.chunk.js.map": "/oscar-love-resume/static/js/453.9fea17b9.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.ede9f6cd.css",
-    "static/js/main.3dfa7632.js"
+    "static/js/main.ceec3435.js"
   ]
 }
