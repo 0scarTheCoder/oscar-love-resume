@@ -34,7 +34,8 @@
       "Bash(git stash:*)",
       "Bash(firebase projects:list:*)",
       "Bash(firebase hosting:sites:*)",
-      "Bash(curl:*)"
+      "Bash(curl:*)",
+      "Bash(gh secret set:*)"
     ],
     "deny": [],
     "ask": []
