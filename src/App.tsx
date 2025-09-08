@@ -64,16 +64,15 @@ function App() {
               <h2 className="text-4xl font-bold mb-8 neon-text">ABOUT</h2>
               <div className="bg-gray-900/30 backdrop-blur-sm rounded-xl p-8 border border-gray-700 hover:border-[#30C55A] hover:shadow-[0_0_20px_rgba(48,197,90,0.3)] transition-all duration-300">
                 <p className="text-xl text-gray-300 leading-relaxed mb-6">
-                  I'm a determined, hardworking, and friendly individual who gets on well with people 
-                  of all ages. My excellent teamwork and leadership skills have been demonstrated through 
-                  commitment to and experience in many sporting teams, including as a junior Australian 
+                  Data Science and Software Engineering graduate with a strong foundation in machine learning, 
+                  statistical analysis, and full-stack development. Proven ability to deliver innovative solutions 
+                  through 2 hackathon wins and collaborative leadership experience as a junior Australian 
                   volleyball representative.
                 </p>
                 <p className="text-xl text-gray-300 leading-relaxed">
-                  Recently graduated with a Bachelor of Philosophy (Honours) in Computer Science and Software 
-                  Engineering from UWA (July 2025), majoring in Data Science, and Mathematics and Statistics. 
-                  I'm passionate about using technology to solve real-world problems and always strive to 
-                  improve and develop professionally.
+                  Bachelor of Philosophy (Honours) in Computer Science and Software Engineering from UWA (July 2025), 
+                  specializing in Data Science, Mathematics and Statistics. Passionate about leveraging AI/ML 
+                  technologies and data-driven insights to solve complex business problems and drive innovation.
                 </p>
               </div>
               
