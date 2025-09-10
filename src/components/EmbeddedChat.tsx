@@ -62,6 +62,8 @@ const EmbeddedChat: React.FC = () => {
       name: 'Oscar Love',
       location: 'Perth, Western Australia',
       email: 'loevoh19@gmail.com',
+      github: 'https://github.com/0scarTheCoder',
+      github_username: '0scarTheCoder',
       role: 'Finance & Consulting Graduate Candidate',
       education: 'Bachelor of Philosophy (Honours) in Computer Science and Software Engineering from UWA',
       graduation: 'July 2025',
@@ -141,9 +143,9 @@ const EmbeddedChat: React.FC = () => {
     contact: {
       keywords: ['contact', 'reach', 'email', 'phone', 'call', 'touch', 'speak', 'talk', 'message', 'communicate', 'get in touch', 'reach out'],
       responses: [
-        `📧 You can reach Oscar directly at **${knowledgeBase.personal.email}** for professional inquiries. He's very responsive to finance and consulting opportunities!`,
-        `💬 Best way to contact Oscar is via email: **${knowledgeBase.personal.email}**. He typically responds within 24 hours, especially for graduate role discussions.`,
-        `📞 For business discussions about investment banking or consulting positions, email **${knowledgeBase.personal.email}**. Oscar is actively seeking opportunities in these fields!`
+        `📧 You can reach Oscar directly at **${knowledgeBase.personal.email}** for professional inquiries. Check out his code at **${knowledgeBase.personal.github}**!`,
+        `💬 Best way to contact Oscar is via email: **${knowledgeBase.personal.email}**. You can also explore his projects on GitHub: **${knowledgeBase.personal.github_username}**.`,
+        `📞 For business discussions, email **${knowledgeBase.personal.email}**. Want to see his technical skills? Visit **${knowledgeBase.personal.github}**!`
       ]
     },
     hiring: {
@@ -185,10 +187,10 @@ const EmbeddedChat: React.FC = () => {
     projects: {
       keywords: ['project', 'portfolio', 'website', 'work', 'examples', 'github', 'built', 'created', 'development', 'code', 'programming'],
       responses: [
-        `📁 You're experiencing Oscar's work right now! This **interactive resume** features real-time data feeds, responsive design, and live analytics - demonstrating technical skills relevant to fintech and financial services.`,
-        `💡 This portfolio showcases: **React/TypeScript development, real-time APIs, data visualization**. Oscar applies these technical skills to solve business problems - valuable in modern finance roles.`,
-        `🔗 The **GitHub activity feed** shows Oscar's ongoing development work. His projects demonstrate both technical proficiency and business acumen - perfect for technology-focused finance roles.`,
-        `🎨 Oscar's recent projects include **data visualization dashboards** and **interactive web applications**. These skills translate perfectly to financial modeling and client presentation tools.`
+        `📁 You're experiencing Oscar's work right now! This **interactive resume** demonstrates his React/TypeScript skills. Check out more projects at **${knowledgeBase.personal.github}**.`,
+        `💡 This portfolio showcases: **React/TypeScript development, real-time APIs, data visualization**. Explore his full codebase: **GitHub.com/${knowledgeBase.personal.github_username}**.`,
+        `🔗 The **GitHub activity feed** on this page shows live commits! Visit **${knowledgeBase.personal.github}** to explore Oscar's repositories and coding projects.`,
+        `🎨 Oscar's projects include **data visualization dashboards** and **web applications**. See his technical work at **${knowledgeBase.personal.github}**!`
       ]
     },
     finance: {

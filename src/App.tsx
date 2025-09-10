@@ -26,6 +26,9 @@ function App() {
           <p className="text-2xl neon-text font-medium mb-6">Data Science & Software Engineering Graduate</p>
           <div className="flex justify-center gap-8 text-gray-300 text-lg">
             <span className="hover:text-white transition-colors">📧 loevoh19@gmail.com</span>
+            <a href="https://github.com/0scarTheCoder" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors hover:neon-text">
+              💻 GitHub: 0scarTheCoder
+            </a>
             <span className="hover:text-white transition-colors">🌐 Remote Worldwide</span>
           </div>
         </section>
