@@ -80,9 +80,9 @@ function App() {
               <div className="grid grid-cols-2 gap-4 mt-8">
                 {[
                   { label: 'ATAR Score', value: '99.35' },
-                  { label: 'Current WAM', value: '76' },
-                  { label: 'Hackathon Wins', value: '2' },
-                  { label: 'Years Experience', value: '6+' }
+                  { label: 'Current WAM', value: '75' },
+                  { label: 'Current GPA', value: '6.0' },
+                  { label: 'Hackathon Wins', value: '2' }
                 ].map((stat, index) => (
                   <div key={stat.label} className="text-center p-4 bg-gray-900/50 backdrop-blur-sm rounded-xl border border-gray-700 hover:border-[#30C55A] hover:shadow-[0_0_20px_rgba(48,197,90,0.3)] transition-all duration-300 transform hover:scale-105">
                     <div className="text-2xl font-bold neon-text mb-2">{stat.value}</div>
@@ -177,6 +177,28 @@ function App() {
               <div className="space-y-8">
                 <div className="relative pl-8 border-l-4 border-[#30C55A] glow-border">
                   <div className="absolute -left-2 top-0 w-4 h-4 bg-[#30C55A] rounded-full animate-pulse"></div>
+                  <h3 className="text-2xl font-bold text-white">Software Developer</h3>
+                  <p className="neon-text text-lg mb-4">Private Consulting • August 2025 - November 2025</p>
+                  <ul className="text-gray-300 space-y-2 text-lg">
+                    <li>⚡ Created web applications as private consultant for clients</li>
+                    <li>⚡ Developed frontend and backend solutions for diverse business requirements</li>
+                    <li>⚡ Built custom APIs and intelligent agents tailored to client MVP needs</li>
+                    <li>⚡ Delivered full-stack solutions meeting specific website and business objectives</li>
+                  </ul>
+                </div>
+                <div className="relative pl-8 border-l-4 border-[#30C55A] glow-border">
+                  <div className="absolute -left-2 top-0 w-4 h-4 bg-[#30C55A] rounded-full animate-pulse"></div>
+                  <h3 className="text-2xl font-bold text-white">Data Analyst</h3>
+                  <p className="neon-text text-lg mb-4">Invest America • April 2024 - July 2024</p>
+                  <ul className="text-gray-300 space-y-2 text-lg">
+                    <li>⚡ Designed and implemented data collection forms for client and system-wide data files</li>
+                    <li>⚡ Integrated frontend and backend systems to improve data accessibility and analytics</li>
+                    <li>⚡ Created financial and income evaluation questionnaires for client assessment</li>
+                    <li>⚡ Enhanced internal audit efficacy by linking investors with supervisors and managers</li>
+                  </ul>
+                </div>
+                <div className="relative pl-8 border-l-4 border-[#30C55A] glow-border">
+                  <div className="absolute -left-2 top-0 w-4 h-4 bg-[#30C55A] rounded-full animate-pulse"></div>
                   <h3 className="text-2xl font-bold text-white">Theatre Orderly</h3>
                   <p className="neon-text text-lg mb-4">St John Of God's Hospital Subiaco • January 2022 - Current</p>
                   <ul className="text-gray-300 space-y-2 text-lg">
@@ -227,16 +249,15 @@ function App() {
               <h2 className="text-4xl font-bold mb-8 neon-text">ACHIEVEMENTS</h2>
               <div className="space-y-6">
                 {[
-                  { icon: "🏆", title: "1st Place SLB Data Science Hackathon", desc: "Won first place among WA university students in October 2023" },
-                  { icon: "🥈", title: "2nd Place UWA WHACK WesCEF Hackathon", desc: "Secured second place in September 2023" },
-                  { icon: "🎯", title: "ATAR 99.35", desc: "Achieved top 1% of students in Western Australia" },
-                  { icon: "🏐", title: "Australian Volleyball Representative", desc: "Selected for Australian teams U17s, U18s & U19s (2017-2019)" },
-                  { icon: "👨‍🎓", title: "Bachelor of Philosophy (Honours)", desc: "Computer Science & Software Engineering from UWA, majoring in Data Science" },
-                  { icon: "🥇", title: "Unisport Nationals Volleyball Champion", desc: "Team member of championship-winning university team (2022)" }
+                  { title: "1st Place SLB Data Science Hackathon", desc: "Won first place among WA university students in October 2023" },
+                  { title: "2nd Place UWA WHACK WesCEF Hackathon", desc: "Secured second place in September 2023" },
+                  { title: "ATAR 99.35", desc: "Achieved top 1% of students in Western Australia" },
+                  { title: "Australian Volleyball Representative", desc: "Selected for Australian teams U17s, U18s & U19s (2017-2019)" },
+                  { title: "Bachelor of Philosophy (Honours)", desc: "Computer Science & Software Engineering from UWA, majoring in Data Science" },
+                  { title: "Unisport Nationals Volleyball Champion", desc: "Team member of championship-winning university team (2022)" }
                 ].map((achievement, index) => (
                   <div key={index} className="bg-gray-900/50 backdrop-blur-sm p-6 rounded-xl border border-gray-700 hover:border-[#30C55A] hover:shadow-[0_0_20px_rgba(48,197,90,0.3)] transform hover:scale-[1.02] transition-all duration-300">
-                    <h3 className="text-lg font-bold mb-3 flex items-center gap-3">
-                      <span className="text-2xl">{achievement.icon}</span>
+                    <h3 className="text-lg font-bold mb-3">
                       {achievement.title}
                     </h3>
                     <p className="text-gray-300 text-sm">{achievement.desc}</p>
@@ -261,25 +282,30 @@ function App() {
                 <div className="transform hover:scale-[1.02] transition-all duration-300">
                   <EarthquakeFeed />
                 </div>
-                <div className="bg-gray-900/50 backdrop-blur-sm rounded-xl border-2 border-gray-700 hover:border-[#30C55A] flex flex-col h-96 transform hover:scale-[1.02] transition-all duration-300">
-                  <div className="flex items-center justify-between p-6 border-b border-gray-700">
-                    <h3 className="text-xl font-bold text-white flex items-center gap-3">
-                      <span className="text-3xl">💬</span>
-                      INTERACTIVE AI CHAT
-                    </h3>
-                    <div className="flex items-center gap-3">
-                      <div className="w-3 h-3 bg-[#30C55A] rounded-full animate-pulse"></div>
-                      <span className="text-sm neon-text font-bold">LIVE</span>
-                    </div>
-                  </div>
-                  <div className="flex-1">
-                    <EmbeddedChat />
-                  </div>
-                </div>
               </div>
             </section>
           </div>
         </div>
+
+        {/* Interactive AI Chat - Full Width */}
+        <section className="mt-20 mb-20">
+          <h2 className="text-4xl font-bold mb-8 neon-text text-center">INTERACTIVE AI CHAT</h2>
+          <div className="bg-gray-900/80 backdrop-blur-sm rounded-xl border-4 border-[#30C55A] shadow-[0_0_40px_rgba(48,197,90,0.6)] hover:shadow-[0_0_60px_rgba(48,197,90,0.8)] flex flex-col h-96 transform hover:scale-[1.01] transition-all duration-300 p-4 glow-border" style={{ boxShadow: 'inset 0 0 20px rgba(48,197,90,0.2), 0 0 40px rgba(48,197,90,0.6)' }}>
+            <div className="flex items-center justify-between p-4 border-b-2 border-[#30C55A] bg-[#30C55A]/10 rounded-t-lg">
+              <h3 className="text-xl font-bold text-[#30C55A] flex items-center gap-3 neon-text">
+                <span className="text-3xl">💬</span>
+                Ask Me Anything About Oscar
+              </h3>
+              <div className="flex items-center gap-3">
+                <div className="w-3 h-3 bg-[#30C55A] rounded-full animate-pulse shadow-[0_0_10px_rgba(48,197,90,0.8)]"></div>
+                <span className="text-sm neon-text font-bold">LIVE AI ASSISTANT</span>
+              </div>
+            </div>
+            <div className="flex-1 p-4 bg-[#30C55A]/10 rounded-b-lg border-2 border-[#30C55A] border-t-0" style={{ background: 'linear-gradient(135deg, rgba(48,197,90,0.15) 0%, rgba(48,197,90,0.05) 100%)', boxShadow: 'inset 0 0 15px rgba(48,197,90,0.2)' }}>
+              <EmbeddedChat />
+            </div>
+          </div>
+        </section>
 
         {/* Hobbies - Full Width Below Columns */}
         <section className="mt-20 mb-20">
@@ -300,7 +326,7 @@ function App() {
       <div className="max-w-7xl mx-auto px-8 text-white">
         {/* Footer */}
         <footer className="text-center text-gray-400 border-t border-gray-800 pt-12 text-lg">
-          <p className="neon-text">© 2024 OSCAR LOVE • Built with React & TypeScript • Always Evolving 🚀</p>
+          <p className="neon-text">© 2025 OSCAR LOVE • Built with React & TypeScript • Always Evolving</p>
         </footer>
       </div>
     </div>

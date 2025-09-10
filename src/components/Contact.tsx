@@ -303,7 +303,7 @@ const Contact: React.FC = () => {
           className="text-center mt-16 pt-8 border-t border-[#30C55A]/30"
         >
           <p className="text-white">
-            © 2024 Oscar Love. Built with React, TypeScript, and Tailwind CSS.
+            © 2025 Oscar Love. Built with React, TypeScript, and Tailwind CSS.
           </p>
           <p className="text-[#30C55A]/70 text-sm mt-2">
             Designed to showcase technical skills through the medium itself.

@@ -118,7 +118,7 @@ const TimeZoneDisplay: React.FC = () => {
       {/* Current Availability Status */}
       <div className="mb-6 p-4 bg-gray-900/50 border border-[#30C55A]/30 rounded-lg">
         <h4 className="font-semibold text-[#30C55A] mb-2">
-          🎯 Current Availability
+          Current Availability
         </h4>
         <p className="text-white">
           {currentStatus}

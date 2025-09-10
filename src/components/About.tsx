@@ -10,7 +10,7 @@ const About: React.FC = () => {
 
   const stats = [
     { label: 'ATAR Score', value: '99.35' },
-    { label: 'Current WAM', value: '76' },
+    { label: 'Current WAM', value: '75' },
     { label: 'Hackathon Wins', value: '2' },
     { label: 'Years Experience', value: '6+' }
   ];
@@ -41,7 +41,7 @@ const About: React.FC = () => {
               <div className="text-8xl font-bold opacity-20 mb-4">OL</div>
               <h3 className="text-2xl font-bold mb-4">Oscar Love</h3>
               <p className="text-primary-100">
-                Data Science & Software Engineering Graduate
+                Finance & Consulting Graduate Candidate
               </p>
             </div>
           </motion.div>
@@ -52,16 +52,17 @@ const About: React.FC = () => {
             transition={{ duration: 0.6, delay: 0.4 }}
           >
             <p className="text-lg text-gray-700 dark:text-gray-300 mb-6 leading-relaxed">
-              Data Science and Software Engineering graduate with a strong foundation in machine learning, 
-              statistical analysis, and full-stack development. Proven ability to deliver innovative solutions 
-              through 2 hackathon wins and collaborative leadership experience as a junior Australian 
-              volleyball representative.
+              Analytically-driven Computer Science and Software Engineering graduate with expertise in 
+              quantitative analysis, statistical modeling, and data-driven decision making. Strong academic 
+              performance (ATAR 99.35, WAM 75, GPA 6.0) combined with proven leadership capabilities demonstrated 
+              through junior Australian volleyball representation and competitive hackathon success.
             </p>
 
             <p className="text-lg text-gray-700 dark:text-gray-300 mb-8 leading-relaxed">
-              Bachelor of Philosophy (Honours) in Computer Science and Software Engineering from UWA (July 2025), 
-              specializing in Data Science, Mathematics and Statistics. Passionate about leveraging AI/ML 
-              technologies and data-driven insights to solve complex business problems and drive innovation.
+              Bachelor of Philosophy (Honours) from The University of Western Australia (July 2025), 
+              specializing in Data Science, Mathematics and Statistics. Seeking to apply rigorous analytical 
+              skills, financial modeling expertise, and strategic problem-solving abilities to drive value 
+              creation in investment banking and management consulting environments.
             </p>
 
             <div className="grid grid-cols-2 gap-6">

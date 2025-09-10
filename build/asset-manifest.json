@@ -1,12 +1,12 @@
 {
   "files": {
-    "main.css": "/oscar-love-resume/static/css/main.ab08a47b.css",
-    "main.js": "/oscar-love-resume/static/js/main.8a170d5a.js",
-    "static/js/206.38c57cd7.chunk.js": "/oscar-love-resume/static/js/206.38c57cd7.chunk.js",
-    "index.html": "/oscar-love-resume/index.html"
+    "main.css": "/static/css/main.ab08a47b.css",
+    "main.js": "/static/js/main.f8dc907f.js",
+    "static/js/206.38c57cd7.chunk.js": "/static/js/206.38c57cd7.chunk.js",
+    "index.html": "/index.html"
   },
   "entrypoints": [
     "static/css/main.ab08a47b.css",
-    "static/js/main.8a170d5a.js"
+    "static/js/main.f8dc907f.js"
   ]
 }
