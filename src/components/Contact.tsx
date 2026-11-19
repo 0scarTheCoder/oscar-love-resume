@@ -49,7 +49,6 @@ const Contact: React.FC = () => {
       window.location.href = mailtoLink;
       
       setFormStatus('success');
-      setFormData({ name: '', email: '', subject: '', message: '' });
       
       setTimeout(() => setFormStatus('idle'), 3000);
     } catch (error) {
@@ -76,8 +75,8 @@ const Contact: React.FC = () => {
     {
       icon: LinkedinIcon,
       title: 'LinkedIn',
-      value: 'oscar-love-547120275',
-      href: 'https://linkedin.com/in/oscar-love-547120275',
+      value: 'in/oscar-love',
+      href: 'https://www.linkedin.com/in/oscar-love',
       color: 'from-indigo-500 to-indigo-600'
     },
     {
@@ -162,12 +161,12 @@ const Contact: React.FC = () => {
               <div className="flex items-center mb-3">
                 <div className="w-3 h-3 bg-[#30C55A] rounded-full mr-3 animate-pulse"></div>
                 <h4 className="font-semibold text-[#30C55A]">
-                  Available for Opportunities
+                  Current Work
                 </h4>
               </div>
               <p className="text-white text-sm">
-                Recently graduated and seeking full-time opportunities, consulting projects, and 
-                collaborations in data science, software engineering, and related fields.
+                I currently work as a software developer and data analyst at Entech and as a partner
+                at Canetoad AI. For opportunities or collaboration, please get in touch by email.
               </p>
             </motion.div>
           </motion.div>
@@ -267,9 +266,9 @@ const Contact: React.FC = () => {
                 {formStatus === 'idle' && <SendIcon />}
                 
                 {formStatus === 'sending' && 'Sending...'}
-                {formStatus === 'success' && 'Email Client Opened!'}
+                {formStatus === 'success' && 'Opening Email App...'}
                 {formStatus === 'error' && 'Failed to Send'}
-                {formStatus === 'idle' && 'Send Message'}
+                {formStatus === 'idle' && 'Open in Email App'}
               </motion.button>
 
               {formStatus === 'success' && (
@@ -278,7 +277,7 @@ const Contact: React.FC = () => {
                   animate={{ opacity: 1, y: 0 }}
                   className="mt-3 text-[#30C55A] text-sm text-center"
                 >
-                  Your email client should have opened with the message pre-filled. Send when ready!
+                  This opens your email app with the message filled in. If nothing opens, email loveoh19@gmail.com directly.
                 </motion.p>
               )}
 
@@ -303,7 +302,7 @@ const Contact: React.FC = () => {
           className="text-center mt-16 pt-8 border-t border-[#30C55A]/30"
         >
           <p className="text-white">
-            © 2025 Oscar Love. Built with React, TypeScript, and Tailwind CSS.
+            © 2026 Oscar Love. Built with React, TypeScript, and Tailwind CSS.
           </p>
           <p className="text-[#30C55A]/70 text-sm mt-2">
             Designed to showcase technical skills through the medium itself.

@@ -22,3 +22,15 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# local tooling
+.firebase/
+.claude/
+
+# personal documents, never publish
+/cover_letters/
+/Interview questions/
+/OSCAR_LOVE_resume*
+~$*
+/ss1.png
+/Screenshot*.png

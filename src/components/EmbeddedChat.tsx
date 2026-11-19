@@ -8,6 +8,452 @@ interface Message {
   timestamp: Date;
 }
 
+interface Role {
+  title: string;
+  company: string;
+  period: string;
+  basis?: string;
+  points: string[];
+}
+
+// Knowledge base about Oscar. Content mirrors his current CV.
+export const knowledgeBase = {
+  personal: {
+    name: 'Oscar Love',
+    location: 'Perth, Western Australia',
+    email: 'loveoh19@gmail.com',
+    github: 'https://github.com/0scarTheCoder',
+    github_username: '0scarTheCoder',
+    linkedin: 'https://www.linkedin.com/in/oscar-love',
+    role: 'Data Analyst and Software Developer',
+    focus: 'Data platforms, pipelines and analytics in the mining sector',
+    atar: '99.35',
+    atar_year: '2020'
+  },
+  education: [
+    {
+      title: 'Honours in computer science and software engineering',
+      institution: 'UWA',
+      period: 'July 2024 to December 2025',
+      completed: 'December 2025',
+      wam: '75',
+      points: [
+        'Research applying reservoir computing and minimum description length to time series prediction in chaotic systems',
+        'Applied to mining operations forecasting, equipment maintenance prediction and operational analytics'
+      ]
+    },
+    {
+      title: 'Bachelor of Philosophy in data science, mathematics and statistics',
+      institution: 'UWA',
+      period: 'February 2021 to June 2024',
+      completed: 'June 2024',
+      wam: '78',
+      points: [] as string[]
+    }
+  ],
+  skills: {
+    languages: ['Python', 'SQL', 'JavaScript', 'TypeScript', 'Java', 'C', 'C++', 'R', 'Julia', 'HTML', 'CSS'],
+    data: ['PostgreSQL', 'PostGIS', 'NoSQL', 'SSMS', 'Schema design', 'Ingestion and ETL pipelines', 'Data governance and provenance'],
+    analytics: ['Machine learning', 'Statistical modelling', 'Discrete event simulation', 'Time series analysis', 'Bayesian statistics', 'Power BI'],
+    engineering: ['Git and GitHub', 'Continuous integration', 'Node.js', 'React', 'Jupyter', 'RStudio'],
+    soft_skills: ['Leadership', 'Teamwork', 'Communication', 'Problem Solving', 'Adaptability', 'Work Ethic']
+  },
+  experience: [
+    {
+      title: 'Software Developer and Data Analyst (Contract)',
+      company: 'Entech Pty Ltd',
+      period: 'March 2026 to present',
+      points: [
+        'One of two developers commercialising DeltaFlow GUI in research and development, to open a new revenue stream for a multinational mining consultancy',
+        'Discrete event simulation and productivity modelling: built a repeatable simulation data pipeline with documentation, feeding Power BI dashboards and improving stakeholder access to KPIs',
+        'Refactored legacy scripts, moved database credentials into environment configuration, standardised repository structure and continuous integration',
+        'Built web templates and applications to localise work planning and present visualisations and measurements supporting employee-utilisation reporting'
+      ]
+    },
+    {
+      title: 'Software Developer and Data Analyst (Partner)',
+      company: 'Canetoad AI',
+      period: 'March 2026 to present',
+      points: [
+        'Built and govern a spatial database behind the mineral exploration platform. PostgreSQL with PostGIS',
+        'Data from eighteen jurisdictions outside Australia and counting, plus WAMEX, DIGS, SARIG, NTGS and Geoscience Australia',
+        'Secured most of that access by writing to government agencies and negotiating licence terms, including British Columbia, Chile, Quebec, Michigan, Minnesota and the USGS. Maintain a documented source permission audit',
+        'Built Google Earth-style layered map visualisations exposing tenement feeds, drill holes and geological boundaries as toggleable GIS layers',
+        'Developed pattern-recognition models over ASX mining announcements, correlating language signals with share-price movement'
+      ]
+    },
+    {
+      title: 'Software Developer',
+      company: 'Hodie Labs',
+      period: 'September 2025 to March 2026',
+      points: [
+        'Lead and only developer of a health monitoring platform, built from the ground up with React, Node.js and an integrated database',
+        'Built interactive dashboards and a chatbot interface for conversational analytics queries, plus custom APIs and backend services'
+      ]
+    },
+    {
+      title: 'Software Engineering Partner',
+      company: 'Robert Willis Algorithms',
+      period: 'September 2025 to present',
+      points: [
+        'Python trading strategies combining statistical analysis with quantitative modelling',
+        'Automated trading algorithms incorporating machine learning, and real-time data processing supporting market analysis'
+      ]
+    },
+    {
+      title: 'Software Developer (Internship)',
+      company: 'Private consulting',
+      period: 'August to November 2025',
+      points: [
+        'Full-stack web applications, custom APIs and intelligent agents for small business and start-up clients'
+      ]
+    },
+    {
+      title: 'Data Analyst (Internship)',
+      company: 'Invest America',
+      period: 'April to July 2024',
+      points: [
+        'Designed data-collection forms and integrated frontend and backend systems to improve data accessibility and analytics'
+      ]
+    },
+    {
+      title: 'Data Management Intern',
+      company: 'Vitruvian',
+      period: 'August to December 2021',
+      points: [
+        'Analysed large financial datasets and built reporting dashboards for senior management'
+      ]
+    },
+    {
+      title: 'Theatre Orderly',
+      company: "St John Of God's Hospital Subiaco",
+      period: 'January 2022 to current',
+      basis: 'casual',
+      points: ['Collaborate with multidisciplinary healthcare teams']
+    },
+    {
+      title: 'Private Tutor',
+      company: '',
+      period: 'January 2018 to current',
+      basis: 'casual',
+      points: ['Mathematics, physics and data science tutoring']
+    },
+    {
+      title: 'Volleyball Referee (Level 2)',
+      company: 'VWA',
+      period: 'March 2021 to current',
+      basis: 'casual',
+      points: [] as string[]
+    }
+  ] as Role[],
+  achievements: [
+    '1st Place SLB Data Science Hackathon (October 2023)',
+    '2nd Place UWA WHACK WesCEF Hackathon (September 2023)',
+    'ATAR 99.35 (2020)',
+    'Australian Junior Indoor Volleyball Representative (2018 and 2019)',
+    'WA Indoor Volleyball 2017 to 2019 (Captain 2017, MVP 2018 and 2019)',
+    'Unisport Nationals Volleyball champions (2022)',
+    'Unisport Nationals Netball runners up (2024)'
+  ],
+  accreditations: [
+    'Working with Children Check',
+    'National Police Clearance',
+    'C-class driver licence',
+    'Level 2 Volleyball Referee',
+    'Surf Life Saving Bronze Medallion',
+    "Silver Duke of Edinburgh's Award"
+  ],
+  interests: ['Gaming', 'Tech Innovation', 'Running', 'Music Production', 'Photography', 'Open Source']
+};
+
+// Fuzzy string matching for typo tolerance
+const levenshteinDistance = (str1: string, str2: string): number => {
+  const matrix: number[][] = [];
+  for (let i = 0; i <= str2.length; i++) {
+    matrix[i] = [i];
+  }
+  for (let j = 0; j <= str1.length; j++) {
+    matrix[0][j] = j;
+  }
+  for (let i = 1; i <= str2.length; i++) {
+    for (let j = 1; j <= str1.length; j++) {
+      if (str2.charAt(i - 1) === str1.charAt(j - 1)) {
+        matrix[i][j] = matrix[i - 1][j - 1];
+      } else {
+        matrix[i][j] = Math.min(
+          matrix[i - 1][j - 1] + 1,
+          matrix[i][j - 1] + 1,
+          matrix[i - 1][j] + 1
+        );
+      }
+    }
+  }
+  return matrix[str2.length][str1.length];
+};
+
+const calculateSimilarity = (str1: string, str2: string): number => {
+  const longer = str1.length > str2.length ? str1 : str2;
+  const shorter = str1.length > str2.length ? str2 : str1;
+  if (longer.length === 0) return 1;
+  const editDistance = levenshteinDistance(longer, shorter);
+  return (longer.length - editDistance) / longer.length;
+};
+
+const fuzzyMatch = (words: string[], tokens: string[]): boolean =>
+  words.some(word => tokens.some(token => calculateSimilarity(word, token) >= 0.8));
+
+const pick = (responses: string[]): string =>
+  responses[Math.floor(Math.random() * responses.length)];
+
+const kb = knowledgeBase;
+const email = kb.personal.email;
+
+const describeRole = (role: Role): string => {
+  const heading = role.company ? `${role.title}, ${role.company}` : role.title;
+  const period = role.basis ? `${role.period}, ${role.basis}` : role.period;
+  const detail = role.points.length ? ` ${role.points.join('. ')}.` : '';
+  return `**${heading}** (${period}).${detail}`;
+};
+
+const roleLine = (role: Role): string => {
+  const heading = role.company ? `${role.title}, ${role.company}` : role.title;
+  const period = role.basis ? `${role.period}, ${role.basis}` : role.period;
+  return `${heading} (${period})`;
+};
+
+const findRole = (company: string, title?: string): Role =>
+  kb.experience.find(role => (title ? role.title.startsWith(title) : role.company.startsWith(company))) as Role;
+
+// Questions that name a specific employer or role get that role's entry.
+// Text matching `exclude` is ignored before the pattern is tested.
+const roleMatchers: { role: Role; pattern: RegExp; exclude?: RegExp; fuzzy: string[] }[] = [
+  {
+    role: findRole('Entech'),
+    pattern: /\bentech\b|delta ?flow|\bkpis?\b|legacy scripts|\bcredentials\b|employee.utilisation|work planning|productivity modelling|mining consultanc(y|ies)/,
+    fuzzy: ['entech', 'deltaflow']
+  },
+  {
+    role: findRole('Canetoad'),
+    pattern: /cane ?toad|spatial database|mineral exploration|\bwamex\b|\bdigs\b|\bsarig\b|\bntgs\b|geoscience|\busgs\b|\bjurisdictions?\b|government agenc(y|ies)|data custodians?|licen[cs]e terms|permission audit|\btenements?\b|drill ?holes?|\bgis\b|google earth|\bmap(s|ping)?\b|\bgeolog\w*|\basx\b|british columbia|\bchile\b|\bquebec\b|\bmichigan\b|\bminnesota\b/,
+    fuzzy: ['canetoad']
+  },
+  {
+    role: findRole('Hodie'),
+    pattern: /\bhodie\b|health monitoring|health platform|\bchatbots?\b/,
+    exclude: /\b(are|r) (you|u) (an? )?(ai )?chatbots?|\bis this (an? )?(ai )?chatbots?/g,
+    fuzzy: ['hodie']
+  },
+  { role: findRole('Robert Willis'), pattern: /robert willis|\bwillis\b|\balgorithms\b|\balgo(rithmic)? trading/, fuzzy: ['willis'] },
+  { role: findRole('Invest America'), pattern: /invest america/, fuzzy: [] },
+  { role: findRole('Vitruvian'), pattern: /\bvitruvian\b/, fuzzy: ['vitruvian'] },
+  {
+    role: findRole('Private consulting'),
+    pattern: /private consult\w*|\bconsult(ing|ants?)\b/,
+    exclude: /\b(management|mining) consult\w*/g,
+    fuzzy: []
+  },
+  { role: findRole('St John'), pattern: /st\.? john|\bsjog\b|\bhospital\b|\border(ly|lies)\b/, fuzzy: ['hospital', 'orderly'] },
+  { role: findRole('', 'Private Tutor'), pattern: /\btutor/, fuzzy: ['tutoring'] },
+  { role: findRole('', 'Volleyball Referee'), pattern: /\breferee(s|d|ing)?\b|\bvwa\b/, fuzzy: ['referee', 'refereeing'] }
+];
+
+const matchesRole = (matcher: { pattern: RegExp; exclude?: RegExp }, question: string): boolean =>
+  matcher.pattern.test(matcher.exclude ? question.replace(matcher.exclude, ' ') : question);
+
+// Job referees (references) are never published. Volleyball refereeing is a role.
+const refereeRequest = /\b(referees|references?|referee (details?|contacts?|names?))\b/;
+const refereeingContext = /volleyball|\bvwa\b/;
+const refereeResponse = `Referee details are not published here. Please email Oscar at **${email}**.`;
+
+// Pay or leaving questions that name an employer get the neutral answer, not the role entry.
+const sensitiveRoleQuestion = /\b(salary|salaries|pay|paid|compensation|wages?|remuneration|package|leav(e|ing)|quit|resign\w*|happy|poach\w*)\b/;
+
+const neutralHiring = `Oscar currently works as a software developer and data analyst at Entech and as a partner at Canetoad AI. For opportunities or collaboration, please email him at **${email}**.`;
+
+const relocationResponse = `Oscar is based in ${kb.personal.location}. For questions about relocation or opportunities, please email him at **${email}**.`;
+
+const educationResponse = (question: string): string => {
+  const [honours, bachelor] = kb.education;
+  const base = `Oscar completed ${honours.title.toLowerCase()} at ${honours.institution} (${honours.period}, WAM ${honours.wam}) and a ${bachelor.title} at ${bachelor.institution} (${bachelor.period}, WAM ${bachelor.wam}). His ATAR was ${kb.personal.atar} (${kb.personal.atar_year}).`;
+  if (/research|thesis|dissertation|honou?rs|reservoir|chaotic|chaos|description length/.test(question)) {
+    return `${base} His honours work: ${honours.points.join('. ')}.`;
+  }
+  return base;
+};
+
+const recentWorkResponse = `Since March 2026 Oscar has worked as a software developer and data analyst at Entech and as a partner at Canetoad AI. At Entech he is one of two developers commercialising DeltaFlow GUI, and works on discrete event simulation and productivity modelling. At Canetoad AI he built and governs a spatial database behind the mineral exploration platform, using PostgreSQL with PostGIS.`;
+
+const fallbackResponses = [
+  "I can help you learn about Oscar's background, skills, experience, or how to get in touch with him. What specific aspect would you like to know more about?",
+  "Feel free to ask me about Oscar's education, work experience, technical skills or achievements. What interests you most?",
+  "I'm here to answer questions about Oscar's professional background. Is there something particular you'd like to discuss?",
+  "You can ask me about Oscar's academic work, professional experience or skills. What would be most helpful to know?"
+];
+
+interface Intent {
+  pattern: RegExp;
+  fuzzy: string[];
+  respond: (question: string) => string;
+}
+
+// Topic intents, checked in order: the first matching intent answers.
+const intents: Intent[] = [
+  {
+    // Hiring, career, availability, timeline, salary and relocation
+    pattern: /\b(hir(e|ed|ing)|job (offer|opening|opportunit\w*)s?|new job|open positions?|opportunit(y|ies)|vacanc(y|ies)|recruit\w*|employable|unemployed|available|availability|start(ing)? date|(can|could|would|will) (he|oscar) start|start (work|soon|immediately|right away)|notice|timeline|salary|salaries|pay|paid|compensation|wages?|rates?|charges?|remuneration|package|relocat\w*|mov(e|ing)|remote(ly)?|overseas|interstate|melbourne|sydney|brisbane|adelaide|canberra|interview\w*|careers?|looking for|seeking|open to|consider|offer\w*|opening|appl(y|ying|ied) (for|to|anywhere)|job applications?|visa|work rights|citizen\w*|sponsor\w*|leav(e|ing)|quit|resign\w*|poach\w*|freelanc\w*|collaborat\w*|management consult\w*|investment bank\w*)\b/,
+    fuzzy: ['salary', 'available', 'availability', 'relocate', 'relocation', 'opportunity', 'opportunities', 'interview', 'career'],
+    respond: question =>
+      /relocat|\bmov(e|ing)\b|\bremote|overseas|interstate|melbourne|sydney|brisbane|adelaide|canberra/.test(question) || fuzzyMatch(question.split(/\s+/), ['relocate', 'relocation'])
+        ? relocationResponse
+        : neutralHiring
+  },
+  {
+    // Graduation and student status
+    pattern: /graduat\w*|\bstudents?\b|still studying|finish(ed)? (his |uni|university|the )?(degree|studies|honours)|completed (his )?(degree|studies|honours)/,
+    fuzzy: ['graduate', 'graduated', 'graduation'],
+    respond: () => 'Oscar completed his honours degree at UWA in December 2025 and has worked at Entech and Canetoad AI since March 2026.'
+  },
+  {
+    // Finance
+    pattern: /\b(financ\w*|banking|banks?|invest(ment|ing|or)s?|trading|traders?|markets?|quant\w*|stocks?)\b/,
+    fuzzy: ['finance', 'financial', 'trading', 'investment'],
+    respond: () => "Oscar's finance-related work is with Robert Willis Algorithms, where he builds Python trading strategies and automated trading algorithms."
+  },
+  {
+    // Education
+    pattern: /\b(education|educational|educated|gpa|reservoir computing|chaotic|chaos|minimum description length|maths?|mathematics|phd|masters|high school|degrees?|universit(y|ies)|uni|uwa|stud(y|ied|ies|ying)|academic\w*|atar|wam|grades?|marks?|honou?rs|bachelor|thesis|dissertation|research|qualifications?|school|major(ed|s)?)\b/,
+    fuzzy: ['education', 'university', 'degree', 'studied', 'honours', 'academic', 'qualification'],
+    respond: educationResponse
+  },
+  {
+    // Recent and current work
+    pattern: /\b(recent(ly)?|latest|lately|current(ly)?|now|nowadays|these days|at the moment|working on|present|what does (he|oscar) do(?! for fun| in (his|the) (free|spare) time| outside)|where does (he|oscar) work|who does (he|oscar) work for|is (he|oscar) employed|(his|oscar's) (current |present )?(role|job|position)(?! history)|job title|mining|mines?)\b/,
+    fuzzy: ['recent', 'recently', 'latest', 'current', 'currently'],
+    respond: () => recentWorkResponse
+  },
+  {
+    // Contact
+    pattern: /\b(contact|e-?mail|reach|get in touch|linkedin|phone|call|message)\b/,
+    fuzzy: ['contact', 'email', 'linkedin'],
+    respond: () => `You can reach Oscar by email at **${email}**. His LinkedIn is ${kb.personal.linkedin} and his GitHub is ${kb.personal.github}.`
+  },
+  {
+    // Location
+    pattern: /\b(locat(ed|ion)|based|lives?|living|perth|city|where is|where's|where in|time ?zone)\b/,
+    fuzzy: ['location', 'located'],
+    respond: () => `Oscar is based in ${kb.personal.location}.`
+  },
+  {
+    // Achievements
+    pattern: /\b(achievements?|accomplishments?|awards?|hackathons?|volleyball|netball|won|wins?|winner|prizes?|sports?|competitions?|unisport|captain|mvp|placings?|champion\w*|represent\w*)\b/,
+    fuzzy: ['achievement', 'achievements', 'hackathon', 'volleyball', 'netball', 'awards'],
+    respond: () => `Oscar's achievements: ${kb.achievements.join('; ')}.`
+  },
+  {
+    // Accreditations
+    pattern: /\b(accreditations?|certif\w*|licen[cs]es?|police|clearances?|working with children|wwcc|bronze medallion|duke of edinburgh|driver'?s?)\b/,
+    fuzzy: ['accreditation', 'accreditations', 'certification', 'licence'],
+    respond: () => `Oscar's accreditations: ${kb.accreditations.join(', ')}.`
+  },
+  {
+    // Projects and code
+    pattern: /\b(projects?|portfolio|github|repos?|repositor(y|ies)|code|website)\b/,
+    fuzzy: ['project', 'projects', 'github', 'portfolio'],
+    respond: () => `Oscar's code is on GitHub at ${kb.personal.github}. His current work includes DeltaFlow GUI at Entech and a spatial database behind the Canetoad AI mineral exploration platform. Ask about Entech or Canetoad AI for more detail.`
+  },
+  {
+    // Skills
+    pattern: /\b(skills?|technical|technolog(y|ies)|tech|stack|languages?|programming|coding|python|sql|javascript|typescript|java|julia|html|css|postgres\w*|postgis|nosql|ssms|etl|pipelines?|governance|machine learning|statistic\w*|simulation|bayesian|power bi|git|react|node|jupyter|rstudio|tools?|good at|expertise|abilit(y|ies)|strengths?|leadership|analytics|continuous integration|ci\/?cd|schema|databases?|apis?|front ?end|back ?end|full.?stack|time series|modelling|data science|does (he|oscar) know|(know|knows|use|uses|using|write|writes|code in|program in|experience (with|in)) (r|c)|(r|c) programming)\b|c\+\+/,
+    fuzzy: ['skills', 'python', 'programming', 'languages', 'technology', 'expertise'],
+    respond: () =>
+      `Oscar's skills. **Languages:** ${kb.skills.languages.join(', ')}. **Data:** ${kb.skills.data.join(', ')}. **Analytics:** ${kb.skills.analytics.join(', ')}. **Engineering:** ${kb.skills.engineering.join(', ')}. **Soft skills:** ${kb.skills.soft_skills.join(', ')}.`
+  },
+  {
+    // Interests
+    pattern: /\b(interests?|hobb(y|ies)|free time|spare time|fun|outside (of )?work|gaming|music|photography|running)\b/,
+    fuzzy: ['interests', 'hobbies'],
+    respond: () => `Oscar's interests: ${kb.interests.join(', ')}.`
+  },
+  {
+    // Work history
+    pattern: /\b(experienced?|work(ed|s|ing)?|employment|employers?|employed|roles?|jobs?|positions?|background|resume|cv|history|interns?|internships?|compan(y|ies))\b/,
+    fuzzy: ['experience', 'employment', 'background'],
+    respond: () => `Oscar's roles: ${kb.experience.map(roleLine).join('; ')}. Ask about any of them for more detail.`
+  }
+];
+
+// General intents, tried only after every topic and typo-tolerant match.
+const generalIntents: Intent[] = [
+  {
+    // Who is Oscar
+    pattern: /\b(who|about|summary|introduce|overview|tell me)\b/,
+    fuzzy: [],
+    respond: () => `${kb.personal.name} is a ${kb.personal.role.toLowerCase()}, based in ${kb.personal.location}. His focus is ${kb.personal.focus.charAt(0).toLowerCase()}${kb.personal.focus.slice(1)}.`
+  },
+  {
+    // Greetings
+    pattern: /^(hello|hi|hey|g'?day|good (morning|afternoon|evening)|greetings|howdy)\b/,
+    fuzzy: [],
+    respond: () => "Hello! I'm Oscar's assistant. I can tell you about his work at Entech and Canetoad AI, his skills, education and achievements."
+  }
+];
+
+// Pure question-to-answer function. Exact matches are tried before
+// typo-tolerant ones, and named employers before general intents.
+export const generateResponse = (question: string): string => {
+  const cleanMessage = question.toLowerCase().trim();
+  const words = cleanMessage.split(/[^a-z0-9+']+/).filter(word => word.length > 3);
+
+  if (refereeRequest.test(cleanMessage) && !refereeingContext.test(cleanMessage)) {
+    return refereeResponse;
+  }
+
+  const namedRoles = roleMatchers.filter(matcher => matchesRole(matcher, cleanMessage));
+  if (namedRoles.length) {
+    if (sensitiveRoleQuestion.test(cleanMessage)) {
+      return neutralHiring;
+    }
+    return namedRoles.map(matcher => describeRole(matcher.role)).join(' ');
+  }
+
+  // A question joined by "and" (or similar) can cover two topics: answer both.
+  const parts = cleanMessage.split(/\s+(?:and|plus|as well as)\s+|\s*[&;,]\s*/).filter(Boolean);
+  const partAnswers: string[] = [];
+  const answered: Intent[] = [];
+  parts.forEach(part => {
+    const intent = intents.find(candidate => candidate.pattern.test(part));
+    if (intent && !answered.includes(intent) && answered.length < 2) {
+      answered.push(intent);
+      partAnswers.push(intent.respond(part));
+    }
+  });
+  if (partAnswers.length) {
+    return partAnswers.join(' ');
+  }
+
+  const exactIntent = intents.find(intent => intent.pattern.test(cleanMessage));
+  if (exactIntent) {
+    return exactIntent.respond(cleanMessage);
+  }
+
+  const fuzzyRoles = roleMatchers.filter(matcher => fuzzyMatch(words, matcher.fuzzy));
+  if (fuzzyRoles.length) {
+    return fuzzyRoles.map(matcher => describeRole(matcher.role)).join(' ');
+  }
+
+  const fuzzyIntent = intents.find(intent => fuzzyMatch(words, intent.fuzzy));
+  if (fuzzyIntent) {
+    return fuzzyIntent.respond(cleanMessage);
+  }
+
+  const generalIntent = generalIntents.find(intent => intent.pattern.test(cleanMessage));
+  if (generalIntent) {
+    return generalIntent.respond(cleanMessage);
+  }
+
+  return pick(fallbackResponses);
+};
+
 const EmbeddedChat: React.FC = () => {
   const [messages, setMessages] = useState<Message[]>([]);
   const [newMessage, setNewMessage] = useState('');
@@ -23,329 +469,6 @@ const EmbeddedChat: React.FC = () => {
   useEffect(() => {
     scrollToBottom();
   }, [messages]);
-
-  // Fuzzy string matching for typo tolerance
-  const calculateSimilarity = (str1: string, str2: string): number => {
-    const longer = str1.length > str2.length ? str1 : str2;
-    const shorter = str1.length > str2.length ? str2 : str1;
-    const editDistance = levenshteinDistance(longer, shorter);
-    return (longer.length - editDistance) / longer.length;
-  };
-
-  const levenshteinDistance = (str1: string, str2: string): number => {
-    const matrix = [];
-    for (let i = 0; i <= str2.length; i++) {
-      matrix[i] = [i];
-    }
-    for (let j = 0; j <= str1.length; j++) {
-      matrix[0][j] = j;
-    }
-    for (let i = 1; i <= str2.length; i++) {
-      for (let j = 1; j <= str1.length; j++) {
-        if (str2.charAt(i - 1) === str1.charAt(j - 1)) {
-          matrix[i][j] = matrix[i - 1][j - 1];
-        } else {
-          matrix[i][j] = Math.min(
-            matrix[i - 1][j - 1] + 1,
-            matrix[i][j - 1] + 1,
-            matrix[i - 1][j] + 1
-          );
-        }
-      }
-    }
-    return matrix[str2.length][str1.length];
-  };
-
-  // Comprehensive knowledge base about Oscar
-  const knowledgeBase = {
-    personal: {
-      name: 'Oscar Love',
-      location: 'Perth, Western Australia',
-      email: 'loevoh19@gmail.com',
-      github: 'https://github.com/0scarTheCoder',
-      github_username: '0scarTheCoder',
-      role: 'Finance & Consulting Graduate Candidate',
-      education: 'Bachelor of Philosophy (Honours) in Computer Science and Software Engineering from UWA',
-      graduation: 'July 2025',
-      atar: '99.35',
-      wam: '75',
-      gpa: '6.0',
-      experience_years: '6+',
-      focus: 'Investment Banking and Management Consulting'
-    },
-    skills: {
-      programming: ['Python', 'R', 'JavaScript', 'Java', 'TypeScript', 'HTML/CSS'],
-      data_science: ['Statistical Analysis', 'Machine Learning', 'Data Visualization', 'Computational Statistics', 'Time Series Analysis', 'Bayesian Statistics'],
-      tools: ['SQL', 'Git/GitHub', 'Jupyter', 'RStudio', 'Power BI', 'Excel', 'React', 'Node.js'],
-      soft_skills: ['Leadership', 'Teamwork', 'Communication', 'Problem Solving', 'Adaptability', 'Work Ethic'],
-      financial: ['Financial Modeling', 'Quantitative Analysis', 'Data-Driven Decision Making', 'Strategic Problem-Solving']
-    },
-    experience: [
-      {
-        title: 'Software Developer',
-        company: 'Private Consulting',
-        period: 'August 2025 - November 2025',
-        description: 'Created web applications as private consultant, developed frontend/backend solutions, built APIs and intelligent agents for client MVPs'
-      },
-      {
-        title: 'Data Analyst',
-        company: 'Invest America',
-        period: 'April 2024 - July 2024',
-        description: 'Designed data collection forms, integrated frontend/backend systems, created financial evaluation questionnaires, enhanced internal audits'
-      },
-      {
-        title: 'Theatre Orderly',
-        company: 'St John Of God\'s Hospital Subiaco',
-        period: 'January 2022 - Current',
-        description: 'Collaborate with multidisciplinary healthcare teams, work under pressure'
-      },
-      {
-        title: 'Data Management Intern',
-        company: 'Vitruvian',
-        period: 'August 2021 - December 2021',
-        description: 'Managed large datasets, developed data visualization tools, financial analysis experience'
-      },
-      {
-        title: 'Private Tutor',
-        company: 'Private Practice',
-        period: 'January 2018 - Current',
-        description: 'Mathematics, physics, and data science tutoring - demonstrates teaching and communication skills'
-      },
-      {
-        title: 'Volleyball Referee',
-        company: 'VWA',
-        period: 'March 2021 - Current',
-        description: 'Level 2 certified referee - quick decision making under pressure'
-      }
-    ],
-    achievements: [
-      '1st Place SLB Data Science Hackathon (October 2023)',
-      '2nd Place UWA WHACK WesCEF Hackathon (September 2023)',
-      'Australian Volleyball Representative (U17s, U18s, U19s) - Leadership experience',
-      'Unisport Nationals Volleyball Champion (2022)',
-      'ATAR 99.35 - Top 1% of students in Western Australia'
-    ],
-    interests: ['Gaming', 'Tech Innovation', 'Running', 'Music Production', 'Photography', 'Open Source'],
-    availability: 'Actively seeking graduate opportunities, can start within 1-2 weeks'
-  };
-
-  // Legacy patterns - no longer used
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const responsePatterns = {
-    greetings: {
-      keywords: ['hello', 'hi', 'hey', 'good morning', 'good afternoon', 'good evening', 'greetings', 'howdy', 'sup', 'yo'],
-      responses: [
-        `Hello! 👋 I'm Oscar's AI assistant. I'm here to tell you about his passion for **investment banking and management consulting**, plus his strong analytical background. What would you like to know?`,
-        `Hi there! 🤖 Welcome to Oscar's interactive portfolio. I can share details about his **quantitative skills**, **academic achievements** (ATAR 99.35!), or his **graduate aspirations**. How can I help?`,
-        `Hey! 👨‍💻 Thanks for visiting Oscar's portfolio. I have comprehensive knowledge about his **finance career goals**, **data science expertise**, and **leadership experience**. Ask me anything!`
-      ]
-    },
-    contact: {
-      keywords: ['contact', 'reach', 'email', 'phone', 'call', 'touch', 'speak', 'talk', 'message', 'communicate', 'get in touch', 'reach out'],
-      responses: [
-        `📧 You can reach Oscar directly at **${knowledgeBase.personal.email}** for professional inquiries. Check out his code at **${knowledgeBase.personal.github}**!`,
-        `💬 Best way to contact Oscar is via email: **${knowledgeBase.personal.email}**. You can also explore his projects on GitHub: **${knowledgeBase.personal.github_username}**.`,
-        `📞 For business discussions, email **${knowledgeBase.personal.email}**. Want to see his technical skills? Visit **${knowledgeBase.personal.github}**!`
-      ]
-    },
-    hiring: {
-      keywords: ['hire', 'job', 'work', 'opportunity', 'position', 'role', 'career', 'available', 'employment', 'recruiting', 'graduate', 'intern', 'analyst', 'trainee'],
-      responses: [
-        `🎯 Excellent! Oscar is actively seeking **graduate opportunities in investment banking and management consulting**. His analytical skills and ${knowledgeBase.personal.atar} ATAR make him an ideal candidate.`,
-        `💼 Perfect timing! Oscar is available for graduate roles. With his **data science background** and **quantitative expertise**, he's particularly interested in finance and consulting positions.`,
-        `🚀 Oscar is seeking his next challenge in the **finance industry**. His combination of technical skills and high academic performance (WAM ${knowledgeBase.personal.wam}) makes him perfect for corporate graduate programs.`,
-        `⭐ Great news! Oscar is ${knowledgeBase.availability.toLowerCase()}. His **hackathon wins** and **leadership experience** demonstrate the problem-solving abilities consulting firms value.`
-      ]
-    },
-    skills: {
-      keywords: ['skills', 'experience', 'technology', 'tech', 'abilities', 'expertise', 'qualifications', 'python', 'r', 'data', 'analytics', 'statistics', 'programming', 'technical'],
-      responses: [
-        `🛠️ Oscar's analytical toolkit: **${knowledgeBase.skills.programming.slice(0,3).join(', ')}, Statistical Analysis, Machine Learning**. Perfect for quantitative roles in finance! He also has financial modeling experience.`,
-        `💻 Technical expertise: **Data Science, Statistics, Programming (${knowledgeBase.skills.programming.slice(0,2).join('/')}/JavaScript)**. His academic focus on mathematics and statistics provides a strong foundation for financial analysis.`,
-        `⚡ Key strengths: **${knowledgeBase.skills.financial.slice(0,3).join(', ')}**. Oscar's hackathon wins demonstrate his ability to solve complex problems under pressure - essential for consulting!`,
-        `🔧 Core competencies: **${knowledgeBase.skills.data_science.slice(0,4).join(', ')}** plus strong soft skills like **${knowledgeBase.skills.soft_skills.slice(0,3).join(', ')}**.`
-      ]
-    },
-    education: {
-      keywords: ['education', 'degree', 'school', 'university', 'uwa', 'study', 'academic', 'atar', 'wam', 'grades', 'student', 'qualification'],
-      responses: [
-        `🎓 **${knowledgeBase.personal.education}**, graduating ${knowledgeBase.personal.graduation}. Specializing in **Data Science, Mathematics and Statistics** - perfect for finance careers.`,
-        `📚 Academic excellence: **ATAR ${knowledgeBase.personal.atar}** (top 1% in WA), current **WAM ${knowledgeBase.personal.wam}**. Oscar's strong quantitative background is exactly what investment banks and consulting firms seek.`,
-        `🏆 UWA Honours degree in Computer Science and Software Engineering with focus on analytical disciplines. This rigorous academic training is ideal preparation for finance and consulting careers.`,
-        `📊 Oscar's academic background combines **technical rigor** with **analytical thinking** - graduating July 2025 with the quantitative skills that make graduates attractive to top-tier firms.`
-      ]
-    },
-    achievements: {
-      keywords: ['achievement', 'award', 'win', 'competition', 'hackathon', 'volleyball', 'success', 'accomplishment', 'recognition', 'honor'],
-      responses: [
-        `🏆 Notable achievements: **${knowledgeBase.achievements[0]}**, **${knowledgeBase.achievements[1]}**, plus **Australian Volleyball Representative** - demonstrating both analytical prowess and leadership.`,
-        `🥇 Oscar's competitive edge: Multiple **hackathon victories** show problem-solving under pressure, while **national volleyball representation** demonstrates teamwork and leadership - key skills for consulting.`,
-        `⭐ Track record of success: **Academic excellence (ATAR ${knowledgeBase.personal.atar})**, **hackathon wins**, and **national-level sports** showcase the well-rounded profile that finance firms value.`,
-        `🎯 Proven performance: From **data science competitions** to **elite athletics**, Oscar consistently delivers results under pressure - exactly what investment banking demands.`
-      ]
-    },
-    projects: {
-      keywords: ['project', 'portfolio', 'website', 'work', 'examples', 'github', 'built', 'created', 'development', 'code', 'programming'],
-      responses: [
-        `📁 You're experiencing Oscar's work right now! This **interactive resume** demonstrates his React/TypeScript skills. Check out more projects at **${knowledgeBase.personal.github}**.`,
-        `💡 This portfolio showcases: **React/TypeScript development, real-time APIs, data visualization**. Explore his full codebase: **GitHub.com/${knowledgeBase.personal.github_username}**.`,
-        `🔗 The **GitHub activity feed** on this page shows live commits! Visit **${knowledgeBase.personal.github}** to explore Oscar's repositories and coding projects.`,
-        `🎨 Oscar's projects include **data visualization dashboards** and **web applications**. See his technical work at **${knowledgeBase.personal.github}**!`
-      ]
-    },
-    finance: {
-      keywords: ['finance', 'banking', 'investment', 'consulting', 'analyst', 'financial', 'corporate', 'business', 'bank', 'firm', 'wall street', 'city', 'trading', 'markets'],
-      responses: [
-        `💰 Oscar is specifically targeting **investment banking** and **management consulting** roles. His quantitative background and analytical mindset are perfectly aligned with financial analysis and strategic problem-solving.`,
-        `📈 With expertise in **statistical modeling, data analysis, and strategic problem-solving**, Oscar brings exactly the skills that modern financial services and consulting firms need.`,
-        `🎯 Oscar's goal: Apply his **rigorous analytical skills** and **data-driven decision making** to drive value creation in investment banking and consulting. His academic excellence shows the work ethic these industries demand.`,
-        `🏦 Perfect fit for finance: Oscar's **quantitative background**, **problem-solving abilities**, and **leadership experience** align perfectly with what investment banks and consulting firms seek in graduates.`
-      ]
-    },
-    location: {
-      keywords: ['location', 'where', 'based', 'perth', 'australia', 'remote', 'relocate', 'move', 'travel', 'geography'],
-      responses: [
-        `🌏 Oscar is based in **Perth, Western Australia** but is eager to relocate for the right opportunity, especially for graduate programs in major financial centers like Sydney, Melbourne, or internationally.`,
-        `📍 Located in Perth, WA. Oscar is **completely flexible about location** and willing to relocate for graduate roles in investment banking or consulting firms anywhere in the world.`,
-        `✈️ Perth-based but ready to move globally! Oscar understands that top finance and consulting opportunities are often in major financial hubs and is excited to relocate for career advancement.`,
-        `🗺️ Geographic flexibility: Oscar can relocate anywhere for the right graduate opportunity. Distance is no barrier when it comes to joining a top-tier finance or consulting firm.`
-      ]
-    },
-    availability: {
-      keywords: ['when', 'available', 'start', 'timeline', 'soon', 'notice', 'timing', 'schedule', 'ready'],
-      responses: [
-        `📅 Oscar ${knowledgeBase.availability.toLowerCase()}. He's finishing his degree in July 2025 and can start immediately after graduation.`,
-        `⚡ **Available now for interviews** and can start working immediately upon graduation (July 2025). For urgent projects or early-start programs, Oscar is flexible.`,
-        `🗓️ Perfect timing! Oscar is actively interviewing and can begin full-time work from July 2025. He's also available for part-time or project work before graduation.`,
-        `⏰ Ready to go! Oscar can start contributing immediately and is available for **summer internships, graduate programs starting mid-2025, or immediate project-based work**.`
-      ]
-    },
-    salary: {
-      keywords: ['salary', 'pay', 'compensation', 'money', 'wage', 'rate', 'package', 'remuneration', 'benefits'],
-      responses: [
-        `💼 Oscar's compensation expectations are **competitive and market-appropriate** for graduate roles in investment banking and consulting. He's open to discussing packages that reflect the value he brings.`,
-        `📊 For salary discussions, it's best to contact Oscar directly at **${knowledgeBase.personal.email}**. He's reasonable and understands graduate market rates for finance and consulting roles.`,
-        `💰 Oscar is focused on **total career opportunity** rather than just initial salary. He's interested in firms that offer strong training, mentorship, and career progression in finance.`
-      ]
-    }
-  };
-
-  // Intelligent response generation with natural language understanding
-  const generateResponse = (userMessage: string): string => {
-    const cleanMessage = userMessage.toLowerCase().trim();
-    const words = cleanMessage.split(/\s+/).filter(word => word.length > 2);
-    
-    // Advanced intent detection
-    const intents = {
-      recent_experience: {
-        keywords: ['recent', 'recently', 'latest', 'current', 'now', 'today', 'since', 'after', 'post', 'new'],
-        triggers: ['done', 'experience', 'work', 'project', 'learning', 'study', 'graduate', 'graduation'],
-        responses: [
-          "Oscar is currently finishing his Honours degree at UWA and graduates in July 2025. He's been working as a Theatre Orderly at St John Of God's Hospital, which has given him valuable experience in high-pressure environments and teamwork.",
-          "Since he's still completing his degree, Oscar's recent focus has been on his Honours project and maintaining his academic performance. He's also been actively participating in hackathons - winning first place in the SLB Data Science competition in October 2023.",
-          "Oscar's most recent professional experience includes his ongoing role at the hospital and his tutoring work, where he helps students with mathematics and data science concepts. He's also been building this interactive portfolio to showcase his technical skills."
-        ]
-      },
-      post_graduation: {
-        keywords: ['after', 'since', 'post', 'graduated', 'graduation', 'degree', 'finished', 'completed'],
-        context: ['experience', 'work', 'done', 'job'],
-        responses: [
-          "Actually, Oscar hasn't graduated yet - he's finishing his Honours degree and will graduate in July 2025. He's currently looking for graduate opportunities to start after graduation.",
-          "Oscar is still completing his studies at UWA and will graduate in July 2025. He's actively seeking graduate positions in investment banking and consulting to begin after he finishes his degree.",
-          "Just to clarify - Oscar is still a student finishing his Honours degree in July 2025. He's currently in his final semester and exploring career opportunities for post-graduation."
-        ]
-      },
-      academic_performance: {
-        keywords: ['grade', 'mark', 'score', 'atar', 'wam', 'academic', 'performance', 'study'],
-        responses: [
-          "Oscar achieved an ATAR of 99.35 and currently maintains a WAM of 75 (GPA 6.0) at UWA. He's focused on completing his Honours degree in Computer Science and Software Engineering.",
-          "Academically, Oscar has performed well - his ATAR was 99.35 and he's maintaining solid grades at university level. He's specializing in Data Science and Statistics.",
-          "Oscar's academic background includes strong performance in his ATAR (99.35) and he's currently working towards his Honours degree with a focus on quantitative disciplines."
-        ]
-      },
-      skills_general: {
-        keywords: ['skill', 'ability', 'expertise', 'good at', 'know', 'can do'],
-        responses: [
-          "Oscar's main strengths are in data analysis, statistical modeling, and programming. He works with Python, R, and JavaScript, and has experience in machine learning and data visualization.",
-          "His skill set combines technical programming abilities with analytical thinking. He's particularly strong in quantitative analysis, which aligns well with finance and consulting roles.",
-          "Oscar brings together data science expertise, programming skills, and problem-solving abilities. His hackathon successes show he can apply these skills effectively under pressure."
-        ]
-      },
-      general_question: {
-        responses: [
-          "I can help you learn about Oscar's background, skills, experience, or how to get in touch with him. What specific aspect would you like to know more about?",
-          "Feel free to ask me about Oscar's education, work experience, technical skills, achievements, or career goals. What interests you most?",
-          "I'm here to answer questions about Oscar's professional background and aspirations. Is there something particular you'd like to discuss?",
-          "You can ask me about Oscar's academic work, professional experience, skills, or future plans. What would be most helpful to know?"
-        ]
-      }
-    };
-    
-    // Intent matching with context awareness
-    let bestIntent: any = null;
-    let highestScore = 0;
-    
-    Object.entries(intents).forEach(([intentName, intent]) => {
-      let score = 0;
-      
-      // Keyword matching
-      if ('keywords' in intent) {
-        intent.keywords.forEach(keyword => {
-          if (cleanMessage.includes(keyword)) {
-            score += 2;
-          }
-          words.forEach(word => {
-            const similarity = calculateSimilarity(word, keyword);
-            if (similarity > 0.8) score += similarity;
-          });
-        });
-      }
-      
-      // Contextual triggers
-      const triggers = ('triggers' in intent) ? intent.triggers : (('context' in intent) ? intent.context : []);
-      triggers.forEach(trigger => {
-        if (cleanMessage.includes(trigger)) {
-          score += 1.5;
-        }
-      });
-      
-      // Special handling for complex queries
-      if (intentName === 'recent_experience') {
-        const recentIndicators = ['recent', 'recently', 'latest', 'new', 'current'];
-        const experienceIndicators = ['done', 'experience', 'work', 'learning', 'study'];
-        
-        const hasRecent = recentIndicators.some(word => cleanMessage.includes(word));
-        const hasExperience = experienceIndicators.some(word => cleanMessage.includes(word));
-        
-        if (hasRecent && hasExperience) score += 3;
-      }
-      
-      if (intentName === 'post_graduation') {
-        const gradIndicators = ['graduate', 'graduation', 'degree', 'finished'];
-        const timeIndicators = ['since', 'after', 'post'];
-        
-        const hasGrad = gradIndicators.some(word => cleanMessage.includes(word));
-        const hasTime = timeIndicators.some(word => cleanMessage.includes(word));
-        
-        if (hasGrad && hasTime) score += 3;
-      }
-      
-      if (score > highestScore) {
-        highestScore = score;
-        bestIntent = { name: intentName, responses: intent.responses };
-      }
-    });
-    
-    // Generate response based on best intent
-    if (bestIntent && highestScore > 1) {
-      const responses = bestIntent.responses;
-      return responses[Math.floor(Math.random() * responses.length)];
-    }
-    
-    // Fallback to general response
-    const generalResponses = intents.general_question.responses;
-    return generalResponses[Math.floor(Math.random() * generalResponses.length)];
-  };
 
   // Enhanced auto-response with better context
   const triggerAutoResponse = (userMessage: string) => {
@@ -387,7 +510,7 @@ const EmbeddedChat: React.FC = () => {
       
       const welcomeMessage: Message = {
         id: 'welcome',
-        text: `Hi ${userInfo.name}! I'm Oscar's AI assistant. I'm equipped with comprehensive knowledge about his finance and consulting aspirations, academic achievements, and professional experience. What would you like to know about his background or career goals?`,
+        text: `Hi ${userInfo.name}! I'm Oscar's assistant. I can tell you about his work at Entech and Canetoad AI, his skills, education and achievements.`,
         sender: 'bot',
         timestamp: new Date()
       };
@@ -426,7 +549,7 @@ const EmbeddedChat: React.FC = () => {
       {/* Messages */}
       {!showUserForm && (
         <>
-          <div className="flex-1 overflow-y-auto p-4 space-y-3 min-h-[200px] max-h-[300px]">
+          <div className="flex-1 overflow-y-auto p-4 space-y-3 min-h-0">
             {messages.map((message) => (
               <motion.div
                 key={message.id}
@@ -444,13 +567,12 @@ const EmbeddedChat: React.FC = () => {
                       <span className="text-xs opacity-70 text-white">Oscar's AI Assistant</span>
                     </div>
                   )}
-                  <p 
-                    className="text-white" 
-                    style={{ color: 'white !important' }}
-                    dangerouslySetInnerHTML={{ 
-                      __html: message.text.replace(/\*\*(.*?)\*\*/g, '<strong style="color: white;">$1</strong>') 
-                    }} 
-                  />
+                  {/* Rendered as React nodes, so visitor-typed text is never treated as HTML. */}
+                  <p className="text-white whitespace-pre-line" style={{ color: 'white' }}>
+                    {message.text.split(/\*\*(.*?)\*\*/g).map((part, i) =>
+                      i % 2 === 1 ? <strong key={i} style={{ color: 'white' }}>{part}</strong> : part
+                    )}
+                  </p>
                 </div>
               </motion.div>
             ))}
@@ -485,7 +607,7 @@ const EmbeddedChat: React.FC = () => {
                 value={newMessage}
                 onChange={(e) => setNewMessage(e.target.value)}
                 onKeyPress={(e) => e.key === 'Enter' && handleSendMessage()}
-                placeholder="Ask about Oscar's finance goals, skills, or experience..."
+                placeholder="Ask about Oscar's experience, skills or education..."
                 className="flex-1 px-3 py-2 border-2 border-[#30C55A]/50 rounded-md focus:outline-none focus:ring-2 focus:ring-[#30C55A] focus:border-[#30C55A] bg-white text-black text-sm shadow-[0_0_10px_rgba(48,197,90,0.2)]"
                 style={{ color: 'black !important', backgroundColor: 'white !important' }}
               />
@@ -498,7 +620,7 @@ const EmbeddedChat: React.FC = () => {
               </button>
             </div>
             <p className="text-xs text-gray-500 mt-1 text-center">
-              Try asking about investment banking, consulting, skills, or achievements!
+              Try asking about Entech, Canetoad AI, skills or achievements.
             </p>
           </div>
         </>

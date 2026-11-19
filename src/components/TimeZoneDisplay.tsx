@@ -13,6 +13,7 @@ const TimeZoneDisplay: React.FC = () => {
   const [currentStatus, setCurrentStatus] = useState<string>('');
 
   const timeZoneData = [
+    { city: 'Perth', timezone: 'Australia/Perth' },
     { city: 'Sydney', timezone: 'Australia/Sydney' },
     { city: 'London', timezone: 'Europe/London' },
     { city: 'New York', timezone: 'America/New_York' },
@@ -82,10 +83,10 @@ const TimeZoneDisplay: React.FC = () => {
 
     setTimezones(updatedTimezones);
 
-    // Set current availability status (assuming Oscar is in Sydney timezone)
-    const sydneyTz = updatedTimezones.find(tz => tz.city === 'Sydney');
-    if (sydneyTz) {
-      setCurrentStatus(`Currently ${sydneyTz.status} in Sydney (${sydneyTz.time})`);
+    // Oscar is based in Perth (AWST, UTC+8).
+    const perthTz = updatedTimezones.find(tz => tz.city === 'Perth');
+    if (perthTz) {
+      setCurrentStatus(`Oscar's local time in Perth: ${perthTz.time}`);
     }
   };
 
@@ -118,7 +119,7 @@ const TimeZoneDisplay: React.FC = () => {
       {/* Current Availability Status */}
       <div className="mb-6 p-4 bg-gray-900/50 border border-[#30C55A]/30 rounded-lg">
         <h4 className="font-semibold text-[#30C55A] mb-2">
-          Current Availability
+          Local Time
         </h4>
         <p className="text-white">
           {currentStatus}
@@ -156,7 +157,7 @@ const TimeZoneDisplay: React.FC = () => {
       </div>
 
       <div className="mt-4 text-center text-sm text-[#30C55A]">
-        💡 Best times to reach me: 9 AM - 5 PM AEST (Sydney time)
+        💡 Best times to reach me: 9 AM to 5 PM AWST (Perth time)
       </div>
     </motion.div>
   );
