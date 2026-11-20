@@ -187,7 +187,6 @@ const achievements = [
   { title: 'Unisport Nationals', desc: 'Volleyball champions 2022, netball runners up 2024' },
 ];
 
-const hobbies = ['🎮 Gaming', '📚 Tech Innovation', '🏃‍♂️ Running', '🎵 Music Production', '📷 Photography', '🌱 Open Source'];
 
 const cardClass =
   'bg-gray-900/50 backdrop-blur-sm rounded-xl border border-gray-700 hover:border-[#30C55A] hover:shadow-[0_0_20px_rgba(48,197,90,0.3)] transition-all duration-300';
@@ -421,18 +420,6 @@ function App() {
             <div className="flex-1 min-h-0 p-2 sm:p-4 bg-[#30C55A]/10 rounded-b-lg border-2 border-[#30C55A] border-t-0" style={{ background: 'linear-gradient(135deg, rgba(48,197,90,0.15) 0%, rgba(48,197,90,0.05) 100%)', boxShadow: 'inset 0 0 15px rgba(48,197,90,0.2)' }}>
               <EmbeddedChat />
             </div>
-          </div>
-        </section>
-
-        {/* Hobbies - Full Width Below Columns */}
-        <section className="mt-20 mb-20">
-          <h2 className="text-3xl sm:text-4xl font-bold mb-8 neon-text text-center">INTERESTS & HOBBIES</h2>
-          <div className="flex flex-wrap justify-center gap-4">
-            {hobbies.map((hobby) => (
-              <span key={hobby} className="bg-gray-900/50 backdrop-blur-sm px-6 py-3 rounded-xl border border-gray-700 hover:border-[#30C55A] transition-all duration-300 transform hover:scale-105 text-lg font-medium">
-                {hobby}
-              </span>
-            ))}
           </div>
         </section>
       </div>
