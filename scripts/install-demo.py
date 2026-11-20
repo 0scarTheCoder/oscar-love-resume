@@ -1,6 +1,6 @@
 """Copy the static dashboard snapshot into public/demo and fill in its banner.
 
-Usage: python3 scripts/install-demo.py ~/dashboard-snapshot-aug19 "Data as of 19 Aug 2026 (prices, rankings and announcements through 18 Aug 2026)."
+Usage: python3 scripts/install-demo.py ~/dashboard-snapshot-aug19-v2 "Data as of 19 Aug 2026 (prices, rankings and announcements through 18 Aug 2026)."
 
 The second argument is the dated statement shown first in the banner.
 
@@ -24,7 +24,24 @@ PAGES = [
     ('announcements.html', 'Announcements'),
     ('ranker.html', 'Ranker'),
     ('fundamentals-ranking.html', 'Fundamentals'),
+    ('clustering.html', 'Clustering'),
+    ('screener.html', 'Screener'),
+    ('learn.html', 'Learn'),
+    ('education.html', 'Education'),
 ]
+EXTRA = {
+    'clustering.html': 'Clustering uses price history to 17 Jun 2026.',
+    'education.html': 'Quizzes are switched off.',
+}
+# Pages present in the snapshot but deliberately not published; links to them are greyed out.
+HELD_BACK = []
+# Learn's "Further reading" is the only place that may link out, and only to these sites.
+OUTBOUND_PAGES = {'learn.html'}
+OUTBOUND_HOSTS = {
+    'www.khanacademy.org', 'moneysmart.gov.au', 'www.investopedia.com', 'www.youtube.com',
+    'www.asx.com.au', 'www.ato.gov.au',
+}
+OUTBOUND_LINK = re.compile(r'<a href="https://([^/"]+)[^"]*" target="_blank" rel="noopener noreferrer"')
 PLACEHOLDER = '<div id="snapshot-banner"></div>'
 FORBIDDEN = re.compile(r'<script|<iframe|<object|<embed|<form|javascript:|\son[a-z]+\s*=|(?:src|href|action)\s*=\s*["\'](?:https?:)?//', re.I)
 
@@ -42,6 +59,7 @@ def banner(current):
         'font:500 13px/1.4 system-ui,-apple-system,Segoe UI,sans-serif;padding:8px 14px;display:flex;flex-wrap:wrap;'
         'gap:6px 16px;align-items:center;border-bottom:2px solid #0D1117">'
         f'<strong>{statement}</strong>'
+        + (f'<strong>{EXTRA[current]}</strong>' if current in EXTRA else '') +
         '<span>Not live data, not financial advice. Search, filters, ticker details, Ask Claude and greyed-out pages are switched off.</span>'
         f'<span style="display:flex;flex-wrap:wrap;gap:4px 12px">{links}</span>'
         '<a href="../" style="margin-left:auto;color:#0D1117;font-weight:700;white-space:nowrap">Back to Oscar\'s resume</a>'
@@ -79,11 +97,21 @@ for asset in os.listdir(os.path.join(source, 'assets')):
 
 for name, label in present:
     page = open(os.path.join(source, name), encoding='utf-8').read()
-    if FORBIDDEN.search(page):
+    checked = page
+    if name in OUTBOUND_PAGES:
+        for link in OUTBOUND_LINK.finditer(page):
+            if link.group(1) not in OUTBOUND_HOSTS:
+                sys.exit(f'{name} links to an unexpected site: {link.group(1)}')
+        checked = OUTBOUND_LINK.sub('<a', page)
+    if FORBIDDEN.search(checked):
         sys.exit(f'{name} contains a script, handler, form or external reference; not installing')
     if page.count(PLACEHOLDER) != 1:
         sys.exit(f'{name} has no banner placeholder')
     page = remove_status_strip(page, name)
+    for held in HELD_BACK:
+        page = page.replace(f'href="{held}"', 'aria-disabled="true" tabindex="-1" title="Not included in this snapshot" style="opacity:.45;pointer-events:none"')
+        if held in page:
+            sys.exit(f'{name} still refers to {held}')
     page = page.replace(PLACEHOLDER, banner(name))
     page = page.replace('<title>Canetoad</title>', f'<title>Canetoad dashboard preview: {label}</title><meta name="robots" content="noindex, nofollow">')
     open(os.path.join(target, name), 'w', encoding='utf-8').write(page)
