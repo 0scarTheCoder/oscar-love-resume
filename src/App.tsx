@@ -406,7 +406,7 @@ function App() {
         {/* Interactive AI Chat - Full Width */}
         <section className="mt-20 mb-20">
           <h2 className="text-3xl sm:text-4xl font-bold mb-8 neon-text text-center">INTERACTIVE AI CHAT</h2>
-          <div className="bg-gray-900/80 backdrop-blur-sm rounded-xl border-4 border-[#30C55A] shadow-[0_0_40px_rgba(48,197,90,0.6)] hover:shadow-[0_0_60px_rgba(48,197,90,0.8)] flex flex-col h-[32rem] sm:h-96 transform hover:scale-[1.01] transition-all duration-300 p-2 sm:p-4 glow-border" style={{ boxShadow: 'inset 0 0 20px rgba(48,197,90,0.2), 0 0 40px rgba(48,197,90,0.6)' }}>
+          <div className="bg-gray-900/80 backdrop-blur-sm rounded-xl border-4 border-[#30C55A] shadow-[0_0_40px_rgba(48,197,90,0.6)] hover:shadow-[0_0_60px_rgba(48,197,90,0.8)] flex flex-col h-[36rem] sm:h-[32rem] transform hover:scale-[1.01] transition-all duration-300 p-2 sm:p-4 glow-border" style={{ boxShadow: 'inset 0 0 20px rgba(48,197,90,0.2), 0 0 40px rgba(48,197,90,0.6)' }}>
             <div className="flex flex-wrap items-center justify-between gap-2 p-4 border-b-2 border-[#30C55A] bg-[#30C55A]/10 rounded-t-lg">
               <h3 className="text-lg sm:text-xl font-bold text-[#30C55A] flex items-center gap-3 neon-text">
                 <span className="text-3xl">💬</span>

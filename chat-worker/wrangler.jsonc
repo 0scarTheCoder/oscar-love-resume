@@ -1,0 +1,18 @@
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "oscar-resume-chat",
+  "main": "src/index.ts",
+  "compatibility_date": "2026-11-01",
+  "observability": { "enabled": true },
+  "vars": {
+    // Claude model used for answers. Swap to "claude-haiku-5-5" for a much lower cost per message.
+    "MODEL": "claude-opus-5-5",
+    // Comma separated list of sites allowed to call this worker.
+    "ALLOWED_ORIGINS": "https://myresume-115cf.web.app,https://myresume-115cf.firebaseapp.com,https://0scarthecoder.github.io,http://localhost:3000,http://localhost:4174"
+  },
+  // Per-visitor limit: 8 messages a minute.
+  "ratelimits": [
+    { "name": "CHAT_LIMITER", "namespace_id": "1001", "simple": { "limit": 8, "period": 60 } }
+  ]
+  // The API key is a secret, never stored here: npx wrangler secret put ANTHROPIC_API_KEY
+}
