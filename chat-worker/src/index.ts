@@ -92,8 +92,10 @@ export default {
         // Short factual answers: low effort keeps replies quick and cheap.
         output_config: { effort: 'low' },
         // If a safety classifier declines a message, the API retries on a fallback model.
-        betas: ['server-side-fallback-2026-07-01'],
-        fallbacks: 'default',
+        // Haiku has no server-side fallback, so it is only requested for other models.
+        ...(env.MODEL.startsWith('claude-haiku')
+          ? {}
+          : { betas: ['server-side-fallback-2026-07-01' as const], fallbacks: 'default' as const }),
         system: [{ type: 'text', text: SYSTEM_PROMPT, cache_control: { type: 'ephemeral' } }],
         messages: turns
       });

@@ -5,8 +5,8 @@
   "compatibility_date": "2026-11-01",
   "observability": { "enabled": true },
   "vars": {
-    // Claude model used for answers. Swap to "claude-haiku-5-5" for a much lower cost per message.
-    "MODEL": "claude-opus-5-5",
+    // Claude model used for answers. Haiku is the cheapest; "claude-opus-5-5" is the most capable at about 40x the cost.
+    "MODEL": "claude-haiku-5-5",
     // Comma separated list of sites allowed to call this worker.
     "ALLOWED_ORIGINS": "https://myresume-115cf.web.app,https://myresume-115cf.firebaseapp.com,https://0scarthecoder.github.io,http://localhost:3000,http://localhost:4174"
   },
