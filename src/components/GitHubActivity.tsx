@@ -7,8 +7,8 @@ import { motion } from 'framer-motion';
 // Contribution counts come from GitHub's contribution calendar. Work in
 // private repositories only ever appears there as a daily count, never with a
 // repository or project name, and only if "Include private contributions on
-// my profile" is switched on in GitHub's profile settings AND the commits are
-// made on github.com with this account. Nothing on the page names an employer
+// my profile" is switched on in GitHub's profile settings of the account that
+// made the commits. Nothing on the page names an employer
 // or project for those counts.
 
 interface ContributionDay {
@@ -27,10 +27,27 @@ interface RecentRepository {
 
 const username = '0scarTheCoder';
 const profileUrl = `https://github.com/${username}`;
+// Oscar's work account. Its repositories are confidential, so only its daily
+// contribution counts are ever read or shown, under the label below. Never
+// list, link or name its repositories here.
+const workUsername = 'OscarEntech';
+const workLabel = 'Entech Internal';
 // GitHub does not offer the contribution calendar over a browser-readable
 // API, so this open-source proxy of the public calendar is used instead.
-const contributionsUrl = `https://github-contributions-api.jogruber.de/v4/${username}?y=last`;
+const contributionsUrlFor = (user: string) => `https://github-contributions-api.jogruber.de/v4/${user}?y=last`;
 const reposUrl = `https://api.github.com/users/${username}/repos?per_page=100&sort=pushed`;
+
+// Valid days up to today from a calendar response, or null if the response is unusable.
+const readCalendar = (result: PromiseSettledResult<any>): ContributionDay[] | null => {
+  if (result.status !== 'fulfilled' || !Array.isArray(result.value?.contributions)) return null;
+  const today = new Date().toISOString().slice(0, 10);
+  return result.value.contributions.filter(
+    (day: any) => day && typeof day.date === 'string' && typeof day.count === 'number' && day.date <= today
+  );
+};
+
+const levelFor = (count: number) => (count === 0 ? 0 : count <= 2 ? 1 : count <= 5 ? 2 : count <= 9 ? 3 : 4);
+const sum = (calendar: ContributionDay[]) => calendar.reduce((total, day) => total + day.count, 0);
 
 const levelColours = ['bg-gray-800', 'bg-[#30C55A]/30', 'bg-[#30C55A]/50', 'bg-[#30C55A]/75', 'bg-[#30C55A]'];
 
@@ -46,6 +63,7 @@ const formatTimeAgo = (dateString: string) => {
 const GitHubActivity: React.FC = () => {
   const [days, setDays] = useState<ContributionDay[] | null>(null);
   const [yearTotal, setYearTotal] = useState<number | null>(null);
+  const [split, setSplit] = useState<{ personal: number | null; work: number | null }>({ personal: null, work: null });
   const [repos, setRepos] = useState<RecentRepository[] | null>(null);
   const [repoCount, setRepoCount] = useState<number | null>(null);
   const [loading, setLoading] = useState(true);
@@ -53,20 +71,26 @@ const GitHubActivity: React.FC = () => {
   const [lastUpdated, setLastUpdated] = useState<Date>(new Date());
 
   const fetchGitHubActivity = useCallback(async () => {
-    const [contributions, repositories] = await Promise.allSettled([
-      fetch(contributionsUrl).then((res) => (res.ok ? res.json() : Promise.reject(res.status))),
+    const [contributions, workContributions, repositories] = await Promise.allSettled([
+      fetch(contributionsUrlFor(username)).then((res) => (res.ok ? res.json() : Promise.reject(res.status))),
+      fetch(contributionsUrlFor(workUsername)).then((res) => (res.ok ? res.json() : Promise.reject(res.status))),
       fetch(reposUrl).then((res) => (res.ok ? res.json() : Promise.reject(res.status))),
     ]);
 
     let anySucceeded = false;
     try {
-      if (contributions.status === 'fulfilled' && Array.isArray(contributions.value?.contributions)) {
-        const today = new Date().toISOString().slice(0, 10);
-        const all: ContributionDay[] = contributions.value.contributions.filter(
-          (day: any) => day && typeof day.date === 'string' && typeof day.count === 'number' && day.date <= today
-        );
+      const personal = readCalendar(contributions);
+      const work = readCalendar(workContributions);
+      if (personal || work) {
+        // Add the two accounts together day by day.
+        const byDate = new Map<string, number>();
+        [...(personal || []), ...(work || [])].forEach((day) => byDate.set(day.date, (byDate.get(day.date) || 0) + day.count));
+        const all: ContributionDay[] = Array.from(byDate.entries())
+          .sort(([first], [second]) => first.localeCompare(second))
+          .map(([date, count]) => ({ date, count, level: levelFor(count) }));
         setDays(all.slice(-30));
-        setYearTotal(all.reduce((sum, day) => sum + day.count, 0));
+        setYearTotal(sum(all));
+        setSplit({ personal: personal ? sum(personal) : null, work: work ? sum(work) : null });
         anySucceeded = true;
       }
 
@@ -170,7 +194,8 @@ const GitHubActivity: React.FC = () => {
           </p>
         )}
         <p className="text-xs text-gray-400 mt-3">
-          Counts come from this account's public GitHub contribution calendar. Work in private repositories appears
+          Last 12 months: {show(split.personal)} personal, {show(split.work)} {workLabel}. Counts combine the public
+          contribution calendars of Oscar's personal and work GitHub accounts. Work in private repositories appears
           only as a daily count, never by name.
         </p>
       </div>
