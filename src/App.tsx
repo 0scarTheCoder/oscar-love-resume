@@ -403,6 +403,44 @@ function App() {
           </div>
         </div>
 
+        {/* Dashboard preview - static snapshot served from /demo, independent of any backend */}
+        <section className="mt-20">
+          <h2 className="text-3xl sm:text-4xl font-bold mb-8 neon-text text-center">DASHBOARD PREVIEW</h2>
+          <a
+            href={`${process.env.PUBLIC_URL}/demo/commodities.html`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group block bg-gray-900/80 backdrop-blur-sm rounded-xl border-4 border-[#30C55A] shadow-[0_0_40px_rgba(48,197,90,0.6)] hover:shadow-[0_0_60px_rgba(48,197,90,0.8)] transition-all duration-300 overflow-hidden"
+          >
+            <div className="grid grid-cols-1 lg:grid-cols-5">
+              <div className="lg:col-span-3 bg-black">
+                <img
+                  src={`${process.env.PUBLIC_URL}/demo-preview.jpg`}
+                  alt="Canetoad ASX materials dashboard, commodities page"
+                  loading="lazy"
+                  width={1200}
+                  height={675}
+                  className="w-full h-auto block"
+                />
+              </div>
+              <div className="lg:col-span-2 p-5 sm:p-8 flex flex-col justify-center">
+                <h3 className="text-xl sm:text-2xl font-bold text-[#30C55A] mb-3">Canetoad ASX Materials Dashboard</h3>
+                <p className="text-gray-300 leading-relaxed mb-4">
+                  A click-through snapshot of the analytics dashboard from my work at Canetoad AI. Browse the commodity,
+                  sector heat, announcement and ranking pages, replayed as of 19 August 2026.
+                </p>
+                <p className="text-sm text-gray-400 mb-6">
+                  Static copy with data through 18 August 2026. Not live data and not financial advice. Search and
+                  filters are switched off.
+                </p>
+                <span className="inline-block self-start bg-[#30C55A] group-hover:bg-[#25A049] text-black font-bold py-3 px-6 rounded-md transition-colors shadow-[0_0_15px_rgba(48,197,90,0.4)]">
+                  OPEN PREVIEW ➤
+                </span>
+              </div>
+            </div>
+          </a>
+        </section>
+
         {/* Interactive AI Chat - Full Width */}
         <section className="mt-20 mb-20">
           <h2 className="text-3xl sm:text-4xl font-bold mb-8 neon-text text-center">INTERACTIVE AI CHAT</h2>
