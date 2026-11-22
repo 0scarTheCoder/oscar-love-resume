@@ -1,0 +1,13 @@
+Interactive Maps demo: third-party notices
+
+Map library: MapLibre GL JS 4.7.1, BSD 3-Clause licence (see vendor/maplibre-gl-LICENSE.txt).
+
+Label glyphs: fonts/Open Sans Bold/0-255.pbf is a glyph range generated from Open Sans
+(Apache License 2.0), as distributed by the OpenMapTiles fonts project.
+
+Basemap: map tiles © OpenStreetMap contributors (https://www.openstreetmap.org/copyright),
+requested at view time from tile.openstreetmap.org.
+
+Drill-hole collar positions: open-file data from the Geological Survey of New South Wales
+(DIGS) and the Geological Survey of Western Australia (WAMEX). Positions only, rounded to
+0.00001 degrees. Duplicate positions are collapsed to one point.

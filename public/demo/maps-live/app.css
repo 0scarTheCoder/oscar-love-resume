@@ -1,0 +1,53 @@
+*, *::before, *::after { box-sizing: border-box; }
+html, body { margin: 0; height: 100%; }
+body {
+  display: flex; flex-direction: column; min-height: 100dvh;
+  background: #f1f5f9; color: #0f172a;
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+#snapshot-banner { flex: none; }
+.page-header {
+  flex: none; display: flex; align-items: flex-end; justify-content: space-between; gap: 12px;
+  padding: 12px 16px; background: #fff; border-bottom: 1px solid #e2e8f0;
+}
+.page-header h1 { margin: 0; font-size: 1.5rem; font-weight: 600; line-height: 1.2; }
+.eyebrow, .back {
+  font-size: 10px; font-weight: 500; text-transform: uppercase; letter-spacing: .05em; color: #64748b;
+}
+.back { white-space: nowrap; text-decoration: none; }
+.back:hover { color: #0f172a; text-decoration: underline; }
+.map-wrap {
+  position: relative; flex: 1 1 auto; min-height: 420px;
+  margin: 12px 16px 16px; border: 1px solid #e2e8f0; border-radius: 8px; overflow: hidden;
+  background: #fff; box-shadow: 0 1px 2px rgba(0,0,0,.05);
+}
+#map { position: absolute; inset: 0; }
+.panel {
+  position: absolute; left: 12px; z-index: 10; max-width: calc(100% - 24px);
+  padding: 8px 12px; border: 1px solid #e2e8f0; border-radius: 8px;
+  background: rgba(255,255,255,.95); box-shadow: 0 1px 2px rgba(0,0,0,.05);
+  -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px);
+}
+.panel-top { top: 12px; display: flex; flex-direction: column; }
+.panel-bottom { bottom: 12px; }
+.panel-label {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: .2em; color: #64748b;
+}
+#maps-source {
+  margin-top: 4px; padding: 4px 8px; border: 1px solid #e2e8f0; border-radius: 6px;
+  background: #fff; color: #0f172a; font: inherit; font-size: 14px;
+}
+.panel-count { margin-top: 4px; font-size: 14px; font-weight: 500; }
+.panel-src { margin-left: 8px; font-size: 12px; font-weight: 400; color: #64748b; }
+.panel-hint { font-size: 12px; color: #64748b; }
+.maplibregl-ctrl-attrib { font-size: 12px; }
+.collar-popup { font-size: 12px; line-height: 1.4; }
+.collar-popup b { font-weight: 600; }
+.noscript { margin: 16px; }
+@media (max-width: 640px) {
+  .page-header { flex-direction: column; align-items: flex-start; }
+  .map-wrap { margin: 8px; min-height: 360px; }
+  /* Keep the OpenStreetMap credit (bottom right) clear of the count panel. */
+  .panel-bottom { bottom: 40px; }
+}

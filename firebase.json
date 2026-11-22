@@ -21,6 +21,15 @@
             "value": "max-age=31536000"
           }
         ]
+      },
+      {
+        "source": "/demo/maps-live/**",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "max-age=3600"
+          }
+        ]
       }
     ]
   }
