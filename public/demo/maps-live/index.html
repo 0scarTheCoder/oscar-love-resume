@@ -10,13 +10,13 @@
 <link rel="stylesheet" href="app.css">
 </head>
 <body>
-<div id="snapshot-banner" style="background:#30C55A;color:#0D1117;font:500 13px/1.4 system-ui,-apple-system,Segoe UI,sans-serif;padding:8px 14px;display:flex;flex-wrap:wrap;gap:6px 16px;align-items:center;border-bottom:2px solid #0D1117"><strong>Interactive map from the dashboard preview.</strong><span>Open-file drill-hole collar positions. Not live data, not financial advice. Map tiles load from OpenStreetMap.</span><a href="../maps.html" style="margin-left:auto;color:#0D1117;font-weight:700;white-space:nowrap">Back to dashboard preview</a><a href="../../" style="color:#0D1117;font-weight:700;white-space:nowrap">Back to Oscar's resume</a></div>
+<div id="snapshot-banner" style="background:#30C55A;color:#0D1117;font:500 13px/1.4 system-ui,-apple-system,Segoe UI,sans-serif;padding:8px 14px;display:flex;flex-wrap:wrap;gap:6px 16px;align-items:center;border-bottom:2px solid #0D1117"><strong>Interactive map from the dashboard preview.</strong><span>Open-file drill-hole collar positions. Not live data, not financial advice. Map tiles load from OpenStreetMap.</span><a href="../maps-viewer.html" style="margin-left:auto;color:#0D1117;font-weight:700;white-space:nowrap">Back to dashboard preview</a><a href="../../" style="color:#0D1117;font-weight:700;white-space:nowrap">Back to Oscar's resume</a></div>
 <header class="page-header">
   <div>
     <h1>Maps</h1>
     <span class="eyebrow">drill-hole collars · open-file data from GSNSW (DIGS) and GSWA (WAMEX) · static demo</span>
   </div>
-  <a class="back" href="../maps.html">← Back to dashboard snapshot</a>
+  <a class="back" href="../maps-viewer.html">← Back to dashboard snapshot</a>
 </header>
 <main class="map-wrap">
   <div id="map" aria-label="Interactive map of drill-hole collars"></div>
@@ -36,7 +36,7 @@
     <div class="panel-hint" id="collar-hint">Clusters below zoom 10 · collars at zoom 10+</div>
   </div>
 </main>
-<noscript><p class="noscript">This interactive map needs JavaScript. Still images are on the <a href="../maps.html">Maps snapshot page</a>.</p></noscript>
+<noscript><p class="noscript">This interactive map needs JavaScript. Still images are on the <a href="../maps-viewer.html">Maps snapshot page</a>.</p></noscript>
 <script src="vendor/maplibre-gl.js"></script>
 <script src="app.js"></script>
 </body>

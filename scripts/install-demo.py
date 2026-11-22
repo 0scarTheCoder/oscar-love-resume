@@ -38,7 +38,7 @@ PAGES = [
 EXTRA = {
     'clustering.html': 'Clustering uses price history to 17 Jun 2026.',
     'education.html': 'Quizzes are switched off.',
-    'maps.html': 'The map views on this page are still images. The interactive map opens on its own page.',
+    'maps.html': 'The map on this page is interactive.',
 }
 # Pages present in the snapshot but deliberately not published; links to them are greyed out.
 HELD_BACK = []
@@ -110,6 +110,35 @@ def remove_status_strip(page, name):
     sys.exit(f'{name}: status strip not closed')
 
 
+# The Maps page is published as maps-viewer.html (maps.html is kept as a copy for old links).
+MAPS_PUBLISHED = 'maps-viewer.html'
+
+
+def embed_live_map(page):
+    """Swap the Maps page's still images for the interactive viewer, inside the dashboard layout."""
+    start = page.index('<section', page.index('</header>'))
+    end = page.rindex('</div>')
+    if page.count('maps-live/index.html') != 1 or page[start:end].count('<figure') != 4:
+        sys.exit('maps.html did not look as expected')
+    body = (
+        '<section class="m-4 overflow-hidden rounded-lg border bg-background shadow-sm">'
+        '<iframe src="maps-live/embed.html" title="Interactive map of drill-hole collars" '
+        'style="display:block;width:100%;height:72vh;min-height:460px;border:0"></iframe>'
+        '<p class="border-t px-4 py-2 text-xs text-muted-foreground" style="margin:0">'
+        'Drag to pan, scroll or pinch to zoom, click a cluster to zoom in, click a dot for its source and position. '
+        '<a class="underline font-medium text-foreground" href="maps-live/index.html">Open the map full screen</a></p>'
+        '</section>'
+        '<p class="mx-4 mb-4 text-xs text-muted-foreground leading-relaxed">'
+        'Below zoom 10, collars are grouped into clusters labelled with a count; from zoom 10, each dot is one collar. '
+        'Drill-hole data: open-file collar positions from the Geological Survey of New South Wales (DIGS, a sample of 250,000) '
+        'and the Geological Survey of Western Australia (WAMEX). Basemap © '
+        '<a class="underline" href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener noreferrer">OpenStreetMap contributors</a>.'
+        '</p>'
+    )
+    page = page[:start] + body + page[end:]
+    return page.replace('static views · 4 images', 'interactive map')
+
+
 # Checked before anything is replaced, so a mismatch leaves the installed copy untouched.
 live = os.path.join(source, 'maps-live')
 if os.path.isdir(live):
@@ -151,7 +180,12 @@ for name, label in present:
         page = page.replace(f'href="{held}"', 'aria-disabled="true" tabindex="-1" title="Not included in this snapshot" style="opacity:.45;pointer-events:none"')
         if held in page:
             sys.exit(f'{name} still refers to {held}')
+    if name == 'maps.html' and os.path.isdir(live):
+        page = embed_live_map(page)
     page = page.replace(PLACEHOLDER, banner(name))
+    page = page.replace('href="maps.html"', f'href="{MAPS_PUBLISHED}"')
+    if name == 'maps.html':
+        open(os.path.join(target, MAPS_PUBLISHED), 'w', encoding='utf-8').write(page)
     page = page.replace('<title>Canetoad</title>', f'<title>Canetoad dashboard preview: {label}</title><meta name="robots" content="noindex, nofollow">')
     open(os.path.join(target, name), 'w', encoding='utf-8').write(page)
     print('installed', name)
@@ -165,7 +199,7 @@ def maps_live_banner():
         'gap:6px 16px;align-items:center;border-bottom:2px solid #0D1117">'
         '<strong>Interactive map from the dashboard preview.</strong>'
         '<span>Open-file drill-hole collar positions. Not live data, not financial advice. Map tiles load from OpenStreetMap.</span>'
-        f'<a href="../maps.html" style="margin-left:auto;{link}">Back to dashboard preview</a>'
+        f'<a href="../{MAPS_PUBLISHED}" style="margin-left:auto;{link}">Back to dashboard preview</a>'
         f'<a href="../../" style="{link}">Back to Oscar\'s resume</a>'
         '</div>'
     )
@@ -180,8 +214,12 @@ if os.path.isdir(live):
     page = open(index, encoding='utf-8').read()
     if page.count(PLACEHOLDER) != 1 or page.count('<script') != 2:
         sys.exit('maps-live/index.html did not look as expected')
-    page = page.replace(PLACEHOLDER, maps_live_banner())
     page = page.replace('<title>', '<meta name="robots" content="noindex, nofollow">\n<title>', 1)
+    page = page.replace('href="../maps.html"', f'href="../{MAPS_PUBLISHED}"')
+    # embed.html: the same viewer without banner or header, shown inside the Maps page.
+    embed = page.replace(PLACEHOLDER, '').replace('</head>', '<style>.page-header{display:none}.map-wrap{margin:0;border:0;border-radius:0;min-height:0}</style>\n</head>')
+    open(os.path.join(target, 'maps-live', 'embed.html'), 'w', encoding='utf-8').write(embed)
+    page = page.replace(PLACEHOLDER, maps_live_banner())
     open(index, 'w', encoding='utf-8').write(page)
     print('installed maps-live')
 elif any('maps-live/' in open(os.path.join(target, name), encoding='utf-8').read() for name, _ in present):
