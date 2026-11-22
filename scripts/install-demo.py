@@ -75,6 +75,8 @@ def banner(current):
         f'font-weight:{"700" if name == current else "500"};white-space:nowrap">{label}</a>'
         for name, label in present
     )
+    if os.path.isdir(os.path.join(source, 'maps-live')):
+        links += '<a href="maps-live/index.html" style="color:#0D1117;font-weight:700;white-space:nowrap">Interactive map</a>'
     return (
         '<div id="snapshot-banner" style="position:sticky;top:0;z-index:1000;background:#30C55A;color:#0D1117;'
         'font:500 13px/1.4 system-ui,-apple-system,Segoe UI,sans-serif;padding:8px 14px;display:flex;flex-wrap:wrap;'
